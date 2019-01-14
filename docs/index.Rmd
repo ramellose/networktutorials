@@ -1,0 +1,15 @@
+---
+title: "Network tutorials"
+author: "Lisa Rottjers"
+date: "14 january 2019"
+output: html_document
+---
+
+This repository contains all presentations and tutorial material for my workshops on network inference and analysis. If you have any questions on the topics, feel free to raise an issue or contact me. 
+
+[Network inference PPTX](https://github.com/ramellose/networktutorials/raw/master/Workshop%20network%20analysis%202019/Network%20inference.pptx)
+
+[Network analysis PPTX](https://github.com/ramellose/networktutorials/raw/master/Workshop%20network%20analysis%202019/Network%20analysis.pptx)
+
+[Network analysis tutorial](https://ramellose.github.io/networktutorials/workshop_MDA.html)
+
