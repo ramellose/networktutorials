@@ -71,7 +71,7 @@ spiec.graph <- set.edge.attribute(graph=spiec.graph, name='edge_weight', value=e
 
 One of the simplest network centralities is degree centrality, where the degree is the number of connections a node has. We can use a hist to visualize node degree. If the degree distribution of a network follows a power law, that network is scale-free. We can fit a power law to the network with the [fit_power_law](https://www.rdocumentation.org/packages/igraph/versions/1.2.2/topics/fit_power_law) function. Do you think this is a scale-free network based on those outcomes? 
 
-Microbial networks do not always follow a power law. However, the extent to which they do may have important biological implications. Can you explain why a scale-free network would be less robust to failure than other networks? You can find the solutions [here](https://github.com/ramellose/networktutorials/Workshop network analysis 2019/workshop_MDA_answers.html/#powerlaw).
+Microbial networks do not always follow a power law. However, the extent to which they do may have important biological implications. Can you explain why a scale-free network would be less robust to failure than other networks? You can find the solutions [here](https://ramellose.github.io/networktutorials/workshop_MDA_answers.html/#powerlaw).
 
 ```{r degree, message=FALSE, warning=FALSE}
 spiec.deg <- degree(spiec.graph)
@@ -86,14 +86,14 @@ We can plot the degree as node size in the network. Because the object returned 
 plot_network(spiec.graph, phyloseqobj.f, type='taxa', color="Rank3", label=NULL) + geom_point(aes(size=spiec.deg), colour='deepskyblue4', shape=1)
 ```
 
-In addition to degree, betweenness centrality is often used. The betweenness centrality is determined by the number of shortest paths passing through a node, where the shortest paths are from all nodes to all other nodes.  Try plotting the betweenness centrality yourself; can you explain why there are no nodes with high betweenness centrality but low degree? Try drawing a network that does have these nodes. For solutions, check [here](https://github.com/ramellose/networktutorials/Workshop network analysis 2019/workshop_MDA_answers.html/#betweenness).
+In addition to degree, betweenness centrality is often used. The betweenness centrality is determined by the number of shortest paths passing through a node, where the shortest paths are from all nodes to all other nodes.  Try plotting the betweenness centrality yourself; can you explain why there are no nodes with high betweenness centrality but low degree? Try drawing a network that does have these nodes. For solutions, check [here](https://ramellose.github.io/networktutorials/workshop_MDA_answers.html/#betweenness).
 
 ```{r betweenness, message=FALSE, warning=FALSE, echo=FALSE}
 spiec.bet <- betweenness(spiec.graph)
 centralities <- data.frame(degree=spiec.deg, betweenness=spiec.bet)
 ```
 
-Like betweenness centrality, closeness centrality uses shortest paths. However, instead of counting the total number of shortest paths passing through a node, this centrality measure uses the shortest paths from the node in question to all other nodes. Therefore, it measures how distant a node is to other nodes. Closeness centrality only makes sense for graphs with a single connected component, as there are no shortest paths from one part of the network to a disconnected part. This is also visible in the histogram and the graph: igraph estimated very low closeness centrality for these disconnected nodes. Try generating a better visualization of the closeness centrality. Do you have an idea of the nodes in the central component that will have the lowest closeness centrality? Answers are [here](https://github.com/ramellose/networktutorials/Workshop network analysis 2019/workshop_MDA_answers.html/#closeness).
+Like betweenness centrality, closeness centrality uses shortest paths. However, instead of counting the total number of shortest paths passing through a node, this centrality measure uses the shortest paths from the node in question to all other nodes. Therefore, it measures how distant a node is to other nodes. Closeness centrality only makes sense for graphs with a single connected component, as there are no shortest paths from one part of the network to a disconnected part. This is also visible in the histogram and the graph: igraph estimated very low closeness centrality for these disconnected nodes. Try generating a better visualization of the closeness centrality. Do you have an idea of the nodes in the central component that will have the lowest closeness centrality? Answers are [here](https://ramellose.github.io/networktutorials/workshop_MDA_answers.html/#closeness).
 
 ```{r closeness, message=FALSE, warning=FALSE}
 spiec.close <- closeness(spiec.graph)
@@ -122,7 +122,7 @@ However, few centrality scores have been assessed for their biological relevance
 
 ## Step 3 - Assortativity 
 
-We can also calculate the network's assortativity. The assortativity of a network quantifies whether nodes are more likely to connect to similar nodes or to dissimilar nodes. This can be similarity in degree, edge weight or any other value of interest. In microbial networks, we can actually also calculate phylogenetic assortativity: are nodes more likely to have associations with taxonomically similar nodes? Try calculating if nodes in this network preferentially connect to nodes with a similar number of positive or negative edges, or with a similar taxonomy. Is this a disassortative or assortative network? For an explanation of the assortativity and assortativity_nominal functions, [look here](https://igraph.org/r/doc/assortativity.html). The solutions can be found [here](https://github.com/ramellose/networktutorials/Workshop network analysis 2019/workshop_MDA_answers.html/#assortativity).
+We can also calculate the network's assortativity. The assortativity of a network quantifies whether nodes are more likely to connect to similar nodes or to dissimilar nodes. This can be similarity in degree, edge weight or any other value of interest. In microbial networks, we can actually also calculate phylogenetic assortativity: are nodes more likely to have associations with taxonomically similar nodes? Try calculating if nodes in this network preferentially connect to nodes with a similar number of positive or negative edges, or with a similar taxonomy. Is this a disassortative or assortative network? For an explanation of the assortativity and assortativity_nominal functions, [look here](https://igraph.org/r/doc/assortativity.html). The solutions can be found [here](https://ramellose.github.io/networktutorials/workshop_MDA_answers.html/#assortativity).
 
 ## Step 4 - Network permutation
 
@@ -139,4 +139,4 @@ for (i in 1:100){
 
 There are multiple ways to compute p-values or other statistics from these permutations. One approach would be to carry out a t-test and assess whether the centralities from the permutations are consistently worse than the centrality values measured for the original graph. However, this may not yield reliable results for some network centralities (e.g. eigenvector). Can you explain why? 
 
-Instead of comparing centrality values for the separate networks, we are going to test if network centrality values for the top 1, top 5, top 10 and top 10% (19) nodes are still in the top values for the permuted networks. Try to figure this out yourself and see what effect the top # has on robustness. Solutions are [here](https://github.com/ramellose/networktutorials/Workshop network analysis 2019/workshop_MDA_answers.html/#permutations).
+Instead of comparing centrality values for the separate networks, we are going to test if network centrality values for the top 1, top 5, top 10 and top 10% (19) nodes are still in the top values for the permuted networks. Try to figure this out yourself and see what effect the top # has on robustness. Solutions are [here](https://ramellose.github.io/networktutorials/workshop_MDA_answers.html/#permutations).
