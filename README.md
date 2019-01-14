@@ -4,3 +4,5 @@ Repository for presentations and network inference tutorials. This repository is
 ## Author
 * **Lisa Röttjers** - [ramellose](https://github.com/ramellose)
 
+## Page
+Find links to the presentation files and tutorials [here](https://ramellose.github.io/networktutorials/index.html). 
