@@ -41,6 +41,39 @@ The null hypothesis can only be rejected if the p-value of the test is below 0.0
 
 Scale-free networks are networks with a degree distribution that follows a power law. Our result indicates that the network may be scale-free and contains nodes with a degree far larger than the average degree. While there is not that much known about the effect of scale-freeness on microbial networks, studies on the internet [(for an example, see Cohen and colleagues, 2001)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.3682) indicate that scale-freeness decreases the network's sensitivity to random attacks. However, we still do not know to what extent biological networks follow a power law as we have few true biological networks. [Lima-Mendez and van Helden (2009)](https://pubs.rsc.org/en/content/articlehtml/2009/mb/b908681a) discuss some of the weaknesses of this theory. 
 
+Like the Cohen paper, we can also simulate networks and see how the network structure is affected by random removal. The code snippet below shows how to do it. 
+
+```{r null, message=FALSE, warning=FALSE, echo=FALSE}
+# generate a dataframe for storing the results
+results <- data.frame(matrix(ncol=3, nrow=90))
+colnames(results) <- c("Model", "Fraction removed", "Average path length")
+erdos <- erdos.renyi.game(n=200, p=0.1)
+klemm <- generateA(n=200, c=0.1)
+# we need to convert the graph to adjacency matrix first
+klemm[klemm > 0] <- 1
+klemm[klemm < 0] <- -1
+klemm <- graph_from_adjacency_matrix(klemm)
+m = 1
+for (i in 1:9){
+  num_edges <- 100 * (i/10)
+  # repeat random deletions 5 times
+  for (k in 1:5){
+    deletions <- sample(x=1:100, size=num_edges)
+    small_erdos <- delete.vertices(erdos, deletions)
+    small_klemm <- delete.vertices(klemm, deletions)
+    results[m,1] <- "Erdos"
+    results[m,2] <- i / 10
+    results[m,3] <- average.path.length(small_erdos)
+    m = m + 1
+    results[m,1] <- "Klemm"
+    results[m,2] <- i / 10
+    results[m,3] <- average.path.length(small_klemm)
+    m = m + 1
+  }
+}
+ggplot(data=results, aes(x=results$`Fraction removed`, y=results$`Average path length`, colour=results$Model)) + geom_point() + labs(x="Average path length", y="Fraction removed")
+```
+
 ## Betweenness centrality {#betweenness}
 
 The code snippet below shows how to calculate and plot betweenness centrality. If a node has low degree but connects two (or more) subcomponents of a network, it can have low degree but high betweenness centrality. In this case, we have one large central component and no clear subclusters. Therefore, the nodes that have higher degree tend to have higher betweenness centrality as well.
