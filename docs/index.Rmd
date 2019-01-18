@@ -1,7 +1,6 @@
 ---
 title: "Network tutorials"
 author: "Lisa Rottjers"
-date: "14 january 2019"
 output: html_document
 ---
 
@@ -13,3 +12,4 @@ This repository contains all presentations and tutorial material for my workshop
 
 [Network analysis tutorial](https://ramellose.github.io/networktutorials/workshop_MDA.html)
 
+[WGCNA tutorial](https://ramellose.github.io/networktutorials/wgcna.html)

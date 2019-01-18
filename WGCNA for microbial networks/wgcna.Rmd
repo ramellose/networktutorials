@@ -1,0 +1,121 @@
+---
+title: "WGCNA"
+author: "Lisa Rottjers"
+date: "16 januari 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## WGCNA
+
+Although WGCNA was originally developed for gene co-expression networks, it can also be used to generate microbial co-occurrence networks. One of the major advantages of WGCNA is that it tries to find a scale-free network and identifies module memberships [(Langfelder & Horvath, 2008)](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-559). Therefore, this tool tends to generate networks with clear hub species, rather than a giant hairball. However, [the original WGCNA tutorials](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/) do not include preprocessing steps that may be more appropriate for microbial data analysis. Therefore, this tutorial describes how to run WGCNA on a 16S rRNA dataset. Some of the code was adapted from the original WGCNA tutorials. 
+
+We are going to work on the phyloseq object 'spiec_phyloseq.RDS', which you can download [here](https://github.com/ramellose/networktutorials/tree/master/Workshop%20network%20analysis%202019). As WGCNA cannot work directly on phyloseq objects, let's extract the abundance table first. Keep in mind that WGCNA needs to have the taxa as columns. 
+
+```{r imports, eval=FALSE}
+library(WGCNA)
+library(phyloseq)
+library(ggplot2)
+library(igraph)
+phyloseqobj.f <- readRDS("spiec_phyloseq.rds")
+data <- t(data.frame(otu_table(phyloseqobj.f)))
+```
+```{r imports_real, message=FALSE, warning=FALSE, echo=FALSE}
+library(WGCNA)
+library(phyloseq)
+library(ggplot2)
+library(igraph)
+phyloseqobj.f <- readRDS("~/networktutorials/Workshop network analysis 2019/spiec_phyloseq.rds")
+data <- t(data.frame(otu_table(phyloseqobj.f)))
+```
+
+## Preprocessing the data
+
+The abundance table is still in absolute counts - but this is not quantitative data. While SPIEC-EASI carries out a clr transform internally, WGCNA does no such thing. Therefore, we will first transform the data before analysis with [the compositions package](https://www.rdocumentation.org/packages/compositions/versions/1.40-2/topics/clr). The WGCNA contains a function to remove taxa with too many zeroes, so we can apply this first. 
+
+```{r processing, message=FALSE, echo=FALSE, warning=FALSE}
+badtaxa <- goodSamplesGenes(data)
+# is the data OK? 
+print(badtaxa$allOK)
+
+library(compositions)
+data <- data + 1  # pseudocount
+data <- clr(data)
+```
+
+## Running WGCNA
+
+Now that the data has been processed, we can construct a network. WGCNA has a convenient wrapper function that carries out all steps at once: [blockwiseModules](https://www.rdocumentation.org/packages/WGCNA/versions/1.66/topics/blockwiseModules). However, let's first go through some of the steps for network construction. We can use the soft threshold function to identify what threshold will give a scale-free network topology. 
+
+```{r threshold, warning=FALSE}
+powers = c(c(1:10), seq(from = 12, to=20, by=2))
+sft = pickSoftThreshold(data, powerVector = powers, verbose = 5)
+plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2], xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n", main = paste("Scale independence"))
+text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2], labels=powers,cex=0.9,col="red")
+```
+
+Normally, we would use a cutoff based on the R squared; e.g. 0.9. However, there is no soft threshold in this range that results in such a value. Therefore, we could go with 6 as a setting for the soft threshold, as the R squared does not improve significantly with a more stringent threshold. This setting is necessary to compute the adjacency matrix and adjust it to become scale-free. Let's see what the difference between 1 and 6 is. 
+
+```{r adjacency}
+adjacency = adjacency(data, power=1, type="unsigned")
+heatmap(adjacency, labRow=FALSE, labCol=FALSE)
+
+adjacency = adjacency(data, power=6, type="unsigned")
+heatmap(adjacency, labRow=FALSE, labCol=FALSE)
+```
+
+Clearly, the thresholding function is helping to remove a large portion of predicted interactions. 
+However, WGCNA does take into account node neighbourhoods by adjusting the matrix. It does so by calculating the topological overlap between nodes: the number of neighbours they share. The adjacency matrix needs to have values between 0 and 1; as some values are outside this range due to rounding errors, we will remove them first. 
+The topological overlap matrix is then used to determine modules, as WGCNA carries out clustering on the TOM. Modules with highly similar eigengenes are removed. 
+
+```{r TOM}
+adjacency[adjacency < 0] = 0
+adjacency[adjacency > 1] = 1
+TOM = TOMsimilarity(adjacency)
+heatmap(TOM, labRow=FALSE, labCol=FALSE)
+```
+
+Let's explore the effect some of the WGCNA settings have on our dataset by running the 1-step network construction and module detection function. We'll use the TOM to construct a network and then overlay cluster assignments to see how the signed vs the unsigned TOM are different. First, we run network inference & construction on the unsigned network type. 
+
+```{r WGCNA unsigned}
+adjacency = adjacency(data, power=6, type="unsigned")
+adjacency[adjacency < 0] = 0
+adjacency[adjacency > 1] = 1
+TOM = TOMsimilarity(adjacency, TOMType="unsigned")
+adj <- TOM
+adj[adj > 0.1] = 1
+adj[adj != 1] = 0
+network <- graph.adjacency(adj)
+network <- simplify(network)  # removes self-loops
+results <- blockwiseModules(data, power=6, TOMType="unsigned", networkType="unsigned")
+V(network)$color <- results$colors
+par(mar=c(0,0,0,0))
+# remove unconnected nodes
+network <- delete.vertices(network, degree(network)==0)
+plot(network, layout=layout.fruchterman.reingold(network), edge.arrow.size = 0.2)
+```
+
+Next, we do the same but set the network type and TOM type to signed. 
+
+```{r WGCNA signed}
+adjacency = adjacency(data, power=6, type="signed")
+adjacency[adjacency < 0] = 0
+adjacency[adjacency > 1] = 1
+TOM = TOMsimilarity(adjacency, TOMType="signed")
+adj <- TOM
+adj[adj > 0.1] = 1
+adj[adj != 1] = 0
+network <- graph.adjacency(adj)
+network <- simplify(network)  # removes self-loops
+results <- blockwiseModules(data, power=6, TOMType="signed", networkType="signed")
+V(network)$color <- results$colors
+par(mar=c(0,0,0,0))
+# remove unconnected nodes
+network <- delete.vertices(network, degree(network)==0)
+plot(network, layout=layout.fruchterman.reingold(network), edge.arrow.size = 0.2)
+```
+
+As you can see, the two networks are completely different! In the first network, the blue and red modules are separated by a central teal component. In the second network, there are two large components and one component is separated entirely from the rest of the network. Therefore, if you use WGCNA on your own data, it can pay off to test different settings and pick the network that makes the most sense. 
