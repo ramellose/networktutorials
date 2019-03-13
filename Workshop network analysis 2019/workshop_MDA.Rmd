@@ -21,6 +21,11 @@ library(phyloseq)
 library(ggplot2)
 library(igraph)
 library(seqtime)
+
+### If you can't import the file:
+### Download the spiec_otus.txt files from https://github.com/ramellose/networktutorials
+### They are in the Workshop folder
+### This file is already preprocessed!
 otus <- read.table("spiec_otus.txt")
 tax <- as.matrix(read.table("spiec_tax.txt"))
 phyloseqobj.f <- phyloseq(otu_table(otus, taxa_are_rows = TRUE), tax_table(tax))
