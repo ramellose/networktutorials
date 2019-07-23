@@ -25,7 +25,7 @@ The dataset can be accessed by specifying _demo_ as the input variable.
 manta -i demo -o outputpath/demo
 ```
 
-The network below is a Cytoscape visualization of the network produced by the above command. Nodes were coloured by phylum-level taxonomy, while border colours map to strong (black) or weak (purple) assignments. Node positions were calculated with the force-directed layout algorithm. 
+The network below is a Cytoscape visualization of the network produced by the above command. Nodes were coloured by phylum-level taxonomy, while border colours map to strong (black) or weak (purple) assignments. Node positions were calculated with a force-directed layout algorithm; for this layout, use the Edge-weighted Spring Embedded Layout directly available in Cytoscape and specify the edge weight as the input. You can download the style used in the pictures below [here](https://github.com/ramellose/networktutorials/blob/master/manta/manta.xml).
 
 ```{r fig1, echo=FALSE, out.width="300px"}
 knitr::include_graphics("bats_1.png")
