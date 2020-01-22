@@ -148,5 +148,5 @@ You don't need to run FlashWeave and SpiecEasi yourself. Download the networks f
 anuran -i folder -o demo_genus -draw -c -perm 5 -nperm 10
 ```
 
-With the correlation network, we can now run _anuran_ again and compare it to the FlashWeave network. 
+With the genus-level networks, we can now run _anuran_ again and compare the intersection to the previous intersection. 
 Do you think the variability of the degree is lower? Is the intersection, as a fraction of the network size, larger or smaller? [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#genus)
