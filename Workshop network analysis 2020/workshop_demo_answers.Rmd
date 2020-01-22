@@ -1,0 +1,189 @@
+---
+title: "Network analysis - _manta_ and _anuran_ - answers"
+author: "Lisa Rottjers"
+date: "14 januari 2020"
+output: html_document
+---
+
+# Solutions
+
+Try figuring out the solutions yourself before looking them up here. All documentation required to answer the questions are located in the hyperlinks in the tutorial. 
+
+## Navigating on command line {#cmd}
+
+```{r cmd, message=FALSE, eval=FALSE}
+# To navigate to a lower directory, use the cd command. 
+cd Documents/tutorial
+# List all the files in the directory that have a graphml extension.
+ls *.graphml
+# navigate to the upper directory
+cd ..
+```
+
+## Running _manta_ on the SPIEC-EASI and FlashWeave networks {#manta}
+
+With the default settings, _manta_ will use the weights specified in the network as edge weights and generate a scoring matrix with these. However, if you look at the SPIEC-EASI edge weights, you may notice that these are very small. As a result, the scoring matrix converges to zero. The algorithm will tell you that this is happening by comparing its performance to a randomly generated cluster. You can fix this by converting negative values to -1 and positive values to 1 with the -b flag. To evaluate robustness, you only have to add the -cr flag. It will take some time to compute! If you open the network in Cytoscape and look at the network, you will see that nodes on the periphery or in the middle tend to have lower robustness scores. 
+
+```{r spiec, message=FALSE, eval=FALSE}
+manta -i arctic_spiec.graphml -o spiec_clustered.cyjs --layout -b -cr
+
+```
+
+If you run _manta_, import the network in Cytoscape and set the node size to the width of the robustness confidence interval, the network should look like below:
+
+```{r spiecfig, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/spiec.PNG")
+```
+
+To run the algorithm on the FlashWeave network, you can use the same command. 
+
+```{r help, message=FALSE, eval=FALSE}
+manta -i arctic_flash.graphml -o flash_clustered  --layout 
+manta -i arctic_flash.graphml -o flash_clustered --layout -cr -b
+
+```
+
+If you look at the edge weights for the FlashWeave network, you will see that these are not nearly as small as the SPIEC-EASI edge weights. Consequently, _manta_ can actually assign some nodes to a cluster even without the conversion. 
+
+```{r flash1, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/flash1.PNG")
+```
+
+However, the results still benefit from the edge weight conversion, as the small cluster is almost as large as the other cluster if this is used. 
+```{r flash2, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/flash2.PNG")
+```
+
+## Running _anuran_ on the SPIEC-EASI and FlashWeave networks {#anuran}
+
+If you run _anuran_, the software will warn you that there are not enough networks to do a thorough statistical analysis. However, it does export a file with the intersection (overlap) between the networks and the null models. Since we used the -draw flag, _anuran_ will already plot some of the results. The most informative image is the one called 'demo_anuran_setsizes.png', shown below. 
+
+```{r anuran, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/demo_anuran_setsizes.png")
+```
+
+As you can see, the set sizes do not fall outside the range of set sizes reported by the null models. 
+
+## Parsing _anuran_ centralities {#central}
+
+```{r parse2, message=FALSE, warning=FALSE}
+library(stringr)
+centralities <- read.csv('demo_centralities.csv', stringsAsFactors = FALSE)
+flash <- c()
+spiec <- c()
+for (i in 1:nrow(centralities)){
+  value <- centralities$Values[[i]]
+  value <- strsplit(value, ')')
+  # if we split the string with the ), 
+  # it will have a length of 2 if there is only 1 network
+  if (length(value[[1]]) == 2){
+    # we need to check whether the value is from the FlashWeave or the SPIEC-EASI network
+    if (grepl('flash', value[[1]][1])){
+        parts <- strsplit(value[[1]][1], ', ')
+        flash <- c(flash, as.numeric(parts[[1]][2]))
+        spiec <- c(spiec, 'NA')
+    } else if (grepl('spiec', value[[1]][1])){
+        parts <- strsplit(value[[1]][1], ', ')
+        flash <- c(flash, 'NA')
+        spiec <- c(spiec, as.numeric(parts[[1]][2]))
+    }}
+  else {
+    # if the value is in both networks, the Flashweave one is first. 
+    parts <- strsplit(value[[1]][1], ', ')
+    flash <- c(flash, as.numeric(parts[[1]][2]))
+    parts <- strsplit(value[[1]][2], ', ')
+    spiec <- c(spiec, as.numeric(parts[[1]][3]))
+  }
+}
+centralities$FlashWeave <- as.numeric(flash)
+centralities$SpiecEasi <- as.numeric(spiec)
+```
+
+## Plotting _anuran_ centralities {#plot}
+
+```{r fig, message=FALSE, warning=FALSE}
+library(ggplot2)
+networks <- centralities[centralities$Network == 'Input',]
+ggplot(data=networks, aes(x=FlashWeave, y=SpiecEasi)) + geom_point(alpha=0.05) + geom_smooth() + theme_minimal() + facet_grid(~Centrality)
+
+```
+
+## Running _anuran_ on the genus-level network {#genus}
+
+To see the degree distribution, we will first need to parse the centrality scores like before. We can reuse the code, since we only need to change the filename. 
+```{r parsegenus, message=FALSE}
+library(stringr)
+centralities <- read.csv('demo_genus_centralities.csv', stringsAsFactors = FALSE)
+flash <- c()
+spiec <- c()
+for (i in 1:nrow(centralities)){
+  value <- centralities$Values[[i]]
+  value <- strsplit(value, ')')
+  # if we split the string with the ), 
+  # it will have a length of 2 if there is only 1 network
+  if (length(value[[1]]) == 2){
+    # we need to check whether the value is from the FlashWeave or the SPIEC-EASI network
+    if (grepl('flash', value[[1]][1])){
+        parts <- strsplit(value[[1]][1], ', ')
+        flash <- c(flash, as.numeric(parts[[1]][2]))
+        spiec <- c(spiec, 'NA')
+    } else if (grepl('spiec', value[[1]][1])){
+        parts <- strsplit(value[[1]][1], ', ')
+        flash <- c(flash, 'NA')
+        spiec <- c(spiec, as.numeric(parts[[1]][2]))
+    }}
+  else {
+    # if the value is in both networks, the Flashweave one is first. 
+    parts <- strsplit(value[[1]][1], ', ')
+    flash <- c(flash, as.numeric(parts[[1]][2]))
+    parts <- strsplit(value[[1]][2], ', ')
+    spiec <- c(spiec, as.numeric(parts[[1]][3]))
+  }
+}
+centralities$FlashWeave <- as.numeric(flash)
+centralities$SpiecEasi <- as.numeric(spiec)
+```
+
+The next part is to plot these results. As you can see, the variation in centrality is larger, not smaller. 
+
+```{r figgenus, message=FALSE, warning=FALSE}
+networks <- centralities[centralities$Network == 'Input',]
+ggplot(data=networks, aes(x=FlashWeave, y=SpiecEasi)) + geom_point(alpha=0.05) + geom_smooth() + theme_minimal() + facet_grid(~Centrality)
+
+```
+
+Could this be caused by differences in network size? We can import the networks, extract the set sizes from the csv file and compare. 
+
+```{r networksize, message=FALSE}
+library(igraph)
+flash <- read_graph('arctic_flash.graphml', format='graphml')
+spiec <- read_graph('arctic_spiec.graphml', format='graphml')
+flashgenus <- read_graph('arctic_genus_flash.graphml', format='graphml')
+spiecgenus <- read_graph('arctic_genus_spiec.graphml', format='graphml')
+cat(paste('FlashWeave OTU', length(E(flash)), 
+            'SpiecEasi OTU', length(E(spiec)), 
+            'FlashWeave genus', length(E(flashgenus)), 
+            'SpiecEasi genus', length(E(spiecgenus)), sep='\n'))
+```
+
+It looks like the genus-level networks are much smaller, as we would expect. Are the intersection sizes also smaller, relative to the network size?
+First, we will need to calculate the total number of unique edges. While we could do this with igraph, igraph automatically renames the nodes according to an index. This makes the comparison between the FlashWeave and SpiecEasi networks challenging. Instead, we can sum the intersection with the difference to get the union. 
+
+```{r unique_edges, message=FALSE}
+sets <- read.csv('demo_sets.csv')
+genus_sets <- read.csv('demo_genus_sets.csv')
+# Since we only have the difference and a single intersection, we can just take the sum of set sizes for the input networks
+sets <- sets[sets['Network'] == 'Input',]
+genus_sets <- genus_sets[genus_sets['Network'] == 'Input',]
+set_union <- sum(sets$Set.size)
+genus_set_union <- sum(genus_sets$Set.size)
+
+cat(paste('Number of OTU-level union edges', set_union, 
+          'Number of genus-level union edges', genus_set_union, 
+          'OTU intersection size as fraction of union', 
+          sets[sets['Set.type'] == 'Intersection 1',]$Set.size / set_union, 
+          'Genus intersection size as fraction of union', 
+          genus_sets[genus_sets['Set.type'] == 'Intersection 1',]$Set.size / genus_set_union, sep='\n'))
+```
+
+The results suggest that the intersection size, relative to the union size, increases if we look at the genus-level network instead of the OTU-level network. The associations are more conserved, but the edge centrality is not. Possibly, the sharply reduced number of edges increases the variability. 

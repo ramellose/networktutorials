@@ -1,0 +1,43 @@
+,Conserved fraction,Group,Network,Network type,Prevalence of conserved fraction,Samples,Set size,Set type,Set type (absolute)
+0,,anuran,Input,Input networks,,2.0,71,Difference,
+1,,anuran,Input,Input networks,,2.0,23,Intersection 1,2.0
+2,,anuran,Degree,Degree networks,,2.0,107,Difference,
+3,,anuran,Degree,Degree networks,,2.0,5,Intersection 1,2.0
+4,,anuran,Random,Random networks,,2.0,115,Difference,
+5,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+6,,anuran,Degree,Degree networks,,2.0,111,Difference,
+7,,anuran,Degree,Degree networks,,2.0,3,Intersection 1,2.0
+8,,anuran,Random,Random networks,,2.0,115,Difference,
+9,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+10,,anuran,Degree,Degree networks,,2.0,113,Difference,
+11,,anuran,Degree,Degree networks,,2.0,2,Intersection 1,2.0
+12,,anuran,Random,Random networks,,2.0,115,Difference,
+13,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+14,,anuran,Degree,Degree networks,,2.0,115,Difference,
+15,,anuran,Degree,Degree networks,,2.0,1,Intersection 1,2.0
+16,,anuran,Random,Random networks,,2.0,117,Difference,
+17,,anuran,Random,Random networks,,2.0,0,Intersection 1,2.0
+18,,anuran,Degree,Degree networks,,2.0,113,Difference,
+19,,anuran,Degree,Degree networks,,2.0,2,Intersection 1,2.0
+20,,anuran,Random,Random networks,,2.0,115,Difference,
+21,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+22,,anuran,Degree,Degree networks,,2.0,111,Difference,
+23,,anuran,Degree,Degree networks,,2.0,3,Intersection 1,2.0
+24,,anuran,Random,Random networks,,2.0,117,Difference,
+25,,anuran,Random,Random networks,,2.0,0,Intersection 1,2.0
+26,,anuran,Degree,Degree networks,,2.0,111,Difference,
+27,,anuran,Degree,Degree networks,,2.0,3,Intersection 1,2.0
+28,,anuran,Random,Random networks,,2.0,117,Difference,
+29,,anuran,Random,Random networks,,2.0,0,Intersection 1,2.0
+30,,anuran,Degree,Degree networks,,2.0,113,Difference,
+31,,anuran,Degree,Degree networks,,2.0,2,Intersection 1,2.0
+32,,anuran,Random,Random networks,,2.0,115,Difference,
+33,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+34,,anuran,Degree,Degree networks,,2.0,115,Difference,
+35,,anuran,Degree,Degree networks,,2.0,1,Intersection 1,2.0
+36,,anuran,Random,Random networks,,2.0,115,Difference,
+37,,anuran,Random,Random networks,,2.0,1,Intersection 1,2.0
+38,,anuran,Degree,Degree networks,,2.0,107,Difference,
+39,,anuran,Degree,Degree networks,,2.0,5,Intersection 1,2.0
+40,,anuran,Random,Random networks,,2.0,117,Difference,
+41,,anuran,Random,Random networks,,2.0,0,Intersection 1,2.0

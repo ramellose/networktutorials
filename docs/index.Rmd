@@ -13,3 +13,5 @@ This repository contains all presentations and tutorial material for my workshop
 [Network analysis tutorial](https://ramellose.github.io/networktutorials/workshop_MDA.html)
 
 [WGCNA tutorial](https://ramellose.github.io/networktutorials/wgcna.html)
+
+[Tutorial for _manta_ and _anuran_](https://ramellose.github.io/networktutorials/workshop_demo.html)
