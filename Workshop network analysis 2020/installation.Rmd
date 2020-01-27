@@ -1,0 +1,79 @@
+---
+title: "Installation instructions"
+author: "Lisa Rottjers"
+date: "27 januari 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+To install _manta_ and _anuran_, it is best to use [venv](https://docs.python.org/3/library/venv.html) to make sure you do not get conflicting dependencies. 
+The installation instructions are slightly different for Windows and Unix systems. 
+
+[Unix instructions](https://ramellose.github.io/networktutorials/installation.html#unix)
+
+[Windows instructions](https://ramellose.github.io/networktutorials/installation.html#windows)
+
+## Unix instructions {#unix}
+
+To make sure you are creating a Python 3 virtual environment, run venv as follows. Replace the path with a path on your Unix system. The demo folder will contain the virtual environment. 
+
+```{r unix1, eval=FALSE}
+python3 -m venv /home/user/Documents/demo
+```
+
+It is possible that you cannot yet use venv. In that case, follow the instructions in the error message to download venv for your Unix system. 
+
+Activate or deactivate the virtual environment:
+
+```{r unix2, eval=FALSE}
+source /home/user/Documents/demo/bin/activate
+deactivate
+```
+
+If you activate the virtual environment, your terminal should say (demo) before your username. 
+With the activated environment, download and install _manta_ and _anuran_. 
+
+```{r unix3, eval=FALSE}
+python3 -m pip install git+https://github.com/ramellose/manta.git
+python3 -m pip install git+https://github.com/ramellose/anuran.git
+```
+
+Test if you can run the software by calling the help command. 
+
+```{r unix4, eval=FALSE}
+manta -h
+anuran -h
+```
+
+## Windows instructions {#windows}
+
+To make sure you are creating a Python 3 virtual environment, run venv as follows. Replace the path with a path on your Windows system. The demo folder will contain the virtual environment. 
+
+```{r windows1, eval=FALSE}
+python3 -m venv C:/user/Documents/demo
+```
+
+Activate or deactivate the virtual environment:
+
+```{r windows2, eval=FALSE}
+C:/user/Documents/demo/Scripts/activate.bat
+deactivate
+```
+
+If you activate the virtual environment, your terminal should say (demo) before your username. 
+With the activated environment, download and install _manta_ and _anuran_. 
+
+```{r windows3, eval=FALSE}
+python3 -m pip install git+https://github.com/ramellose/manta.git
+python3 -m pip install git+https://github.com/ramellose/anuran.git
+```
+
+Test if you can run the software by calling the help command. 
+
+```{r windows4, eval=FALSE}
+manta -h
+anuran -h
+```
