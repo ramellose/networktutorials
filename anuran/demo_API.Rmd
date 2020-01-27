@@ -1,0 +1,214 @@
+---
+title: "Accessing the _anuran_ API"
+author: "Lisa Rottjers"
+date: "24 januari 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## What does _anuran_ do?
+
+The _anuran_ package contains functions that can be used to establish the existence of conserved or unique patterns across network. You can find _anuran_ [here](https://github.com/ramellose/anuran). At the moment, the [README](https://github.com/ramellose/anuran/blob/master/README.md) contains several standard commands and there are two vignettes available that demonstrate how to use _anuran_. The first vignette uses [the demo data](https://ramellose.github.io/anuran/demo_anuran.html) and looks at the soil microbiome in three different plots. The second vignette uses [a data set of soil samples from the Arctic](https://ramellose.github.io/networktutorials/workshop_demo.html). Both of these vignettes use the command line interface (CLI). This means that you run _anuran_ from your terminal and it will generate several files containing the outcomes of the analysis. 
+However, you might want to tweak your analysis so you can compare your centrality value of choice, or you might want to use the null models to test the significance of network-level properties not currently supported by _anuran_. This is where the application programming interface (API) comes in. 
+
+## What is an API exactly and why would you use it?
+
+While a command line interface specifies how the command line input controls the software, the API specifies how you should interact with _anuran_ in Python. For example, you don't need to know how _anuran_ works to be able to generate null models with it. For nearly all functions in the package, the [Sphinx documentation](https://ramellose.github.io/anuran/index.html) describes its parameters and output. You can also get this documentation by importing the function and running _help(function name)_. 
+
+In this demo, we will go through some of the most important functions that may be useful if you want to adapt _anuran_ specifically to your research. 
+You will see how to export a json file of null models, and how to generate a custom centrality score. 
+
+## How are the _anuran_ functions structured?
+
+Each function in the package is part of a [module](https://ramellose.github.io/anuran/py-modindex.html). At the moment, there are 7 modules: _centrality_, _draw_, _graphvals_, _nulls_, _sets_, _stats_ and _utils_. 
+
+The _draw_ module contains code for generating figures with Seaborn, while the _utils_ module contains functions that need to be imported by the other modules. For example, we generate the null models in parallel to reduce the computational time that _anuran_ needs. The actual edge swapping is therefore implemented in _utils_, so the _nulls_ module can import it and run several instances in parallel. Since you will not need to access these functions directly, you can ignore them. 
+
+The _centrality_ and _graphvals_ modules contain functions for calculating properties from groups of networks. If you want to change the centrality scores or graph properties, you can change functions in these models to do this. With the _nulls_ module, you can get the null models to do your own analysis, while you might adapt the _sets_ module to change the definition of an intersection. For example, you might choose to define an intersection as a group of edges where two matching edges do not need to have the same association partners, but the association partners do need to be from the same family.  
+
+In this case, we will generate some null models first. We will use two networks that we inferred from [the arctic soil data set](https://sfamjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.1462-2920.2010.02277.x). with two different software methods. Download them from these links: [SPIEC-EASI](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/arctic_spiec.graphml) and [FlashWeave](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/arctic_flash.graphml) by right-clicking the page, selecting 'Save page as...' and saving them as .graphml files. 
+
+
+## Null models
+
+First, we define all the parameters of the function. The location where you saved the two networks should be given as a list (the brackets []), since _anuran_ can accept multiple locations at once. The number _n_ is the total number of null models to generate per network, while _core_ determines the number of processor cores to use. The fraction and prevalence are then used to define a synthetic core; in this case, we will generate five groups of null models. The first group will not have a core network, the second two will have a core network that is 5% of the total network size and occurs in half or all of the networks, while the last two will have a core network that is 10% of the total core size and also occurs in half or all of the networks. 
+
+Keep in mind that especially the core prevalence needs to make sense: we cannot generate a core network with edges in 20% of networks, since we only have 2 networks. Additionally, the core network sets are derived from a single network. The two networks that have the same core will both be randomized from either the FlashWeave network or the SpiecEasi network, and therefore the set size depends strongly on the total size of these networks. 
+
+```{r params, eval=FALSE}
+location = ['C:/Documents/demo']
+n = 10
+core = 4
+fraction = [0.05, 0.1]
+prevalence = [0.5, 1]
+```
+
+After we have defined the parameters, we need to correctly import the networks from the folder. Since _anuran_ can import different groups, it retains this group structure in a Python dictionary where each key is the base name of the imported folder. We can just give the key an arbitrary name. We only need to define a single key-value pair, with the value being the list where the networks will be added. 
+
+The next part is to get all the graph files from the folder. You can use [glob](https://docs.python.org/2/library/glob.html), or you can just give the full filenames. 
+
+Then, we iterate over the the files. For each file, we read the network into memory and then add it to the dictionary as a tuple. The tuple contains the name of the file (without the complete filepath) and a [NetworkX](https://networkx.github.io/) object. 
+
+Because we add the network as a tuple, we can later on use the name if we want to find a specific null models. 
+
+```{r network, eval=FALSE}
+networks = {'demo': list()}
+
+import glob
+files = [f for f in glob.glob(location + "**/*.graphml", recursive=True)]
+files = ['C:/Documents/demo/arctic_flash.graphml', 'arctic_spiec.graphml']
+for file in files:
+    network = nx.read_graphml(file)
+    networks['demo'].append((os.path.basename(file), nx.to_undirected(network)))
+```
+
+If you call the networks dictionary, you will see the structure of this object. It should now look like this (with different memory codes):
+
+```{r struc, eval=FALSE}
+networks
+
+{'demo': [('arctic_flash.graphml', <networkx.classes.graph.Graph at 0x1dc4c6b7fd0>),
+          ('arctic_spiec.graphml', <networkx.classes.graph.Graph at 0x1dc4c796fd0>)]}
+
+```
+
+Next, we import the function that generates the null models (appropriately named generate_nulls) and run it. 
+
+```{r import, eval=FALSE}
+from anuran.nulls import generate_null
+random, degree = generate_null(networks, n=n, core=core, fraction=fraction, prev=prevalence)
+```
+
+And there we go! Two new objects with all the null models we want. One problem: they are still in memory. We can write specific networks to individual graph files, or we can just loop over all the networks and export them. 
+
+If we just want a single null model, we can access the two model objects. Both objects are dictionaries, with a key for each of the groups we imported. 
+We can access the dictionary; it contains another dictionary with fully randomized null models and null models with a core. 
+
+```{r object, eval=FALSE}
+random_models_only = random['demo']['random']
+```
+
+This object contains two lists, one for each of the networks in the _demo_ folder. Each list contains 10 null models, again organized as tuples with a network name and the NetworkX object. The picture below illustrates the full structure. Each of the generated model types is a nested dictionary, with important _anuran_ parameters like the folder name and filename used as dictionary keys. The networks themselves are stored as a list of lists; one list per network, with each list containing the specified number of null models. These are stored as a tuple so the file name associated with the model cannot be lost. 
+
+```{r flash1, fig.margin=TRUE, out.width='30%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/anuran_structure.png")
+```
+
+To get a single FlashWeave network, we just need to index the lists. We can then write the network to disk by accessing the second part of the tuple. 
+Find the different NetworkX-supported formats [here](https://networkx.github.io/documentation/stable/reference/readwrite/index.html).
+
+```{r subset_network, eval=FALSE}
+network = random_models_only[0][0]
+network
+import networkx as nx
+nx.write_graphml(network[1], 'C:/Documents/demo/flashweave_null.graphml')
+```
+
+
+To write the entire _random_ object to graphml files, we need to iterate over the object structure. Create a folder first, so you can store the null models there. 
+
+Can you repeat this for the _degree_ object?
+
+```{r json, eval=FALSE}
+for file in random:
+  for model in random[file]:
+    if type(random[file][model]) == list:
+        # if the type is a list, this must be the models without a core
+        for i in range(len(random[file][model])):
+          network = random[file][model][i]
+          for j in range(len(network)):
+            name = [file, model, str(j), network[j][0]]
+            name =  'C:/Documents/demo/nulls/' + '_'.join(name)
+            nx.write_graphml(network[j][1], name)
+    elif type(random[file][model]) == dict:
+      # if the type is a dict, then it contains core models and is organized by core size and prevalence
+      for size in random[file][model]:
+        for prev in random[file][model][size]:
+          for i in range(len(random[file][model][size][prev])):
+            network = random[file][model][size][prev][i]
+            for j in range(len(network)):
+              name = [file, model, str(size), str(prev), str(j), network[j][0]]
+              name =  'C:/Documents/demo/nulls/' + '_'.join(name)
+              nx.write_graphml(network[j][1], name)
+
+with open('C:/Documents/demo/null_models.json', 'w') as fp:
+  json.dump(random_json, fp)
+
+```
+
+If we want to generate networks in R, we can just read the graphml files with [igraph](https://igraph.org/r/doc/read_graph.html). We can parse the filenames to fill in the object structure. Now the _random_networks_ list contains all fully randomized networks named by their respective filename. 
+
+Can you import the other networks with a synthetic core to lists as well? 
+
+```{r readigraph, eval=FALSE}
+library(igraph)
+file <- 'C:/Documents/demo/nulls/'
+
+all_filenames <- list.files(path=file)
+random_networks <- list()
+for (filename in all_filenames){
+  names <- strsplit(filename, '_')
+  if (names[[1]][2] == 'random'){
+    random_networks[[filename]] = read_graph(paste(file, filename, sep=''), format='graphml')
+  }
+}
+```
+
+## Centralities
+
+Do you want to change the centrality measure for your particular analysis? _anuran_ only has one function that calculates all the centralities. Since most NetworkX centrality functions have interchangeable outputs, you can just adapt this function. It is located in the centralities module. A simple way to edit _anuran_ is to download the zip file from Github and extract it. Then, navigate to the appropriate module so you can edit the centralities function.
+
+```{r centrality, eval=FALSE}
+def generate_centralities(networks):
+    """
+    This function constructs lists with centrality rankings of nodes in multiple networks.
+    Instead of using the absolute degree or betweenness centrality, this takes metric bias into account.
+
+    :param networks: List of input networks
+    :return: Pandas dataframe with rankings
+    """
+    properties = {x: list() for x in ['Degree', 'Closeness', 'Betweenness']}
+    for network in networks:
+        properties['Degree'].append((network[0], centrality_percentile(nx.degree_centrality(network[1]))))
+        properties['Closeness'].append((network[0], centrality_percentile(nx.closeness_centrality(network[1]))))
+        properties['Betweenness'].append((network[0], centrality_percentile(nx.betweenness_centrality(network[1]))))
+    return properties
+
+```
+
+
+This function takes absolute scores for centralities and converts these to rankings, so different networks are comparable. 
+We can try adding another centrality from [here](https://networkx.github.io/documentation/stable/reference/algorithms/centrality.html). 
+Let's add the load centrality. Try to add another centrality that you are interested in as well. 
+
+```{r centrality2, eval=FALSE}
+def generate_centralities(networks):
+    """
+    This function constructs lists with centrality rankings of nodes in multiple networks.
+    Instead of using the absolute degree or betweenness centrality, this takes metric bias into account.
+
+    :param networks: List of input networks
+    :return: Pandas dataframe with rankings
+    """
+    properties = {x: list() for x in ['Degree', 'Closeness', 'Betweenness', 'Load']}
+    for network in networks:
+        properties['Degree'].append((network[0], centrality_percentile(nx.degree_centrality(network[1]))))
+        properties['Closeness'].append((network[0], centrality_percentile(nx.closeness_centrality(network[1]))))
+        properties['Betweenness'].append((network[0], centrality_percentile(nx.betweenness_centrality(network[1]))))
+        properties['Load'].append((network[0], centrality_percentile(nx.load_centrality(network[1]))))
+    return properties
+```
+
+After you have made your changes, navigate to the folder where you unzipped the _anuran_ repository. It should contain a file called setup.py
+Reinstall your version of _anuran_ with the following command:
+
+```{r install, eval=FALSE}
+python -m pip uninstall anuran
+python setup.py install 
+```
+
+You should now be able to run _anuran_ on command line while it will calculate your centrality statistic of choice.  
