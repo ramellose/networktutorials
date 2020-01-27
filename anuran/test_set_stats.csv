@@ -1,0 +1,7 @@
+,Group,Comparison,Measure,P,P.type
+2,demo,Random,Difference,0.0,Set sizes
+4,demo,Random,Intersection 1,0.0,Set sizes
+0,demo,Random,Intersection 0.6,4.450586341567536e-285,Set sizes
+5,demo,Degree,Intersection 1,2.89015653116521e-113,Set sizes
+3,demo,Degree,Difference,2.0656160523780213e-45,Set sizes
+1,demo,Degree,Intersection 0.6,4.92600523764554e-45,Set sizes
