@@ -9,22 +9,67 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Why Python and NetworkX? 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+While R has powerful network libraries in the form of [igraph](https://igraph.org/r/) and [network](https://cran.r-project.org/web/packages/network/network.pdf), Python also has its fair share of excellent libraries For example, [graph-tool](https://graph-tool.skewed.de/) and [Snap.py](https://snap.stanford.edu/snappy/) are highly optimized and therefore great for massive data sets, while [igraph](https://igraph.org/python/) also has a Python equivalent. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+In this tutorial, we will focus on [NetworkX](https://networkx.github.io/), which contains [dozens of algorithms](https://networkx.github.io/documentation/stable/py-modindex.html) specifically targeted towards network analysis. As [NetworkX](https://networkx.github.io/) is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. 
 
-```{r cars}
-summary(cars)
+This tutorial works best from a Python IDE. The IDE supplied with your Python installation is [IDLE](https://realpython.com/python-idle/), but you might also give [Spyder](https://www.spyder-ide.org/), [Pycharm](https://www.jetbrains.com/pycharm/) or [another IDE](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments) a try. 
+
+## Importing a network
+
+To play with NetworkX, we first need a network. 
+When we construct a network with SpiecEasi, it does not yet have the taxonomy included. Download [the unprocessed network](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/raw_spiec.graphml) and [the taxonomy](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/raw_tax.txt) and read them. 
+
+```{r read_graph, eval=FALSE}
+import os
+import networkx as nx
+import pandas as pd
+os.chdir('C:/user/Documents/workshop')  # Change to the folder where you downloaded the files
+network = nx.read_graphml('raw_spiec.graphml')
+taxonomy = pd.read_csv('raw_tax.txt', sep='\t')
 ```
 
-## Including Plots
+## Accessing the NetworkX object
 
-You can also embed plots, for example:
+What information is already in the network? We can see the node and edge metadata by accessing a single node or edge. 
+Fill in the nodename and edgename variables yourself. 
+Do not forget the round brackets; with NetworkX, we index the network object with a [tuple](https://www.w3schools.com/python/python_tuples.asp) of the two nodes that participate in the edge. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r access, eval=FALSE}
+print(network.nodes)
+print(network.edges)
+nodename = 
+edgename = 
+
+print(network.nodes[nodename]) 
+print(network.edges[edgename]) 
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The current names of the nodes might be a problem. These were assigned by igraph when the network was created from the SpiecEasi outputs, but they are not reproducible across networks. If we would make a FlashWeave network, the node names will still go from 0 to n, but they might not refer to the same taxa. 
+
+We can easily rename nodes with a [dictionary](https://www.w3schools.com/python/python_dictionaries.asp). Since the names are already stored in the node metadata, we can actually extract the dictionary from there. The copy parameter is set to False; if True, NetworkX would create a new network that needs to be assigned to a variable. Now, we modify the network in place. 
+
+```{r rename, eval=FALSE}
+names = nx.get_node_attributes(network, 'name')
+nx.relabel_nodes(network, names, copy=False)
+```
+
+Of course, the taxonomy is still not contained in the node metadata. This we can also do by parsing the pandas dataframe so we extract dictionaries. We first iterate to create a dictionary of dictionaries; the top-level dictionary contains the taxonomy levels, while the lower-level dictionaries contain the node - taxonomy values. 
+
+The command below constructs the dict of dicts; can you print the complete taxonomy for taxon 742260?  
+
+```{r taxdict, eval=FALSE}
+# make dict of network attributes
+tax = dict()
+for col in taxonomy.columns:
+    tax[col] = dict()
+for row in taxonomy.iterrows():
+    for col in taxonomy.columns:
+        tax[col][str(row[0])] = row[1][col]
+
+print(tax['Rank4']['544990'])
+```
+
