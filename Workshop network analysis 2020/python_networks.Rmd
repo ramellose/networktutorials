@@ -13,9 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 While R has powerful network libraries in the form of [igraph](https://igraph.org/r/) and [network](https://cran.r-project.org/web/packages/network/network.pdf), Python also has its fair share of excellent libraries For example, [graph-tool](https://graph-tool.skewed.de/) and [Snap.py](https://snap.stanford.edu/snappy/) are highly optimized and therefore great for massive data sets, while [igraph](https://igraph.org/python/) also has a Python equivalent. 
 
-In this tutorial, we will focus on [NetworkX](https://networkx.github.io/), which contains [dozens of algorithms](https://networkx.github.io/documentation/stable/py-modindex.html) specifically targeted towards network analysis. As [NetworkX](https://networkx.github.io/) is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. 
-
-This tutorial works best from a Python IDE. The IDE supplied with your Python installation is [IDLE](https://realpython.com/python-idle/), but you might also give [Spyder](https://www.spyder-ide.org/), [Pycharm](https://www.jetbrains.com/pycharm/) or [another IDE](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments) a try. 
+In this tutorial, we will focus on [NetworkX](https://networkx.github.io/). You will learn how to access the NetworkX network object and how to calculate some interesting network properties. As [NetworkX](https://networkx.github.io/) is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. Moreover, NetworkX contains [dozens of algorithms](https://networkx.github.io/documentation/stable/py-modindex.html) specifically targeted towards network analysis. 
 
 ## Importing a network
 
@@ -73,3 +71,90 @@ for row in taxonomy.iterrows():
 print(tax['Rank4']['544990'])
 ```
 
+NetworkX can add node metadata with a dictionary. We can iterate over the top-level dictionary to add all the taxonomic levels. 
+Confirm that the taxonomy addition worked by checking the node metadata again. 
+
+```{r addtax, eval=FALSE}
+for key in tax:
+    nx.set_node_attributes(network, tax[key], key)
+```
+
+We can do some interesting analyses with NetworkX now that we have the complete network. For example, we can test whether the degree distribution follows a power law. For this, we first need the degree distribution. This is again given as a dictionary, but it does not matter which node has what degree. Since we cannot access the values from the DegreeView directly, we first convert it to a dictionary, extract the values and convert the values to a list. 
+
+Now we have the list of degrees, we can use the [powerlaw](https://pypi.org/project/powerlaw/) package to extract the parameters of the power law distribution fit to the data and then test whether a power law distribution or another distribution better fits the data. If the likelihood (first value) is positive, then the first distribution is more likely. If it is negative, the second distribution fits the data better. The p-value (second value) tests whether the sign of the likelihood is significant. Which distribution do you think has the best fit? 
+
+```{r powerlaw, eval=FALSE}
+deg = dict(nx.degree(network))
+deg = list(deg.values())
+
+import powerlaw
+fit = powerlaw.Fit(deg, discrete=True)
+fit.distribution_compare('power_law', 'lognormal')
+fit.distribution_compare('power_law', 'exponential')
+fit.distribution_compare('power_law', 'lognormal_positive')
+fit.distribution_compare('power_law', 'stretched_exponential')
+
+```
+
+There are also several types of [assortativity](https://networkx.github.io/documentation/stable/reference/algorithms/assortativity.html) implemented in NetworkX. The degree assortativity is perhaps the most standard one: are nodes with a specific degree more or less likely to have edges to a node with the same degree?
+
+```{r deg_assortativity, eval=FALSE}
+nx.degree_assortativity_coefficient(network)
+```
+
+In this case, the degree assortativity is not so informative. However, we can also calculate the assortativity for node attributes. Since the taxonomy was added as a node attribute before, we can calculate taxonomic assortativity. The taxonomic assortativity at the kingdom level is a bit daft, since we only have 1 node with a dummy variable. All nodes belong to the Bacteria kingdom. What are the taxonomic assortativities for the other taxonomic levels? Can you think of a biological explanation why the trend changes at a certain point? 
+
+```{r tax_assortativity, eval=FALSE}
+nx.attribute_assortativity_coefficient(network, 'Rank1')
+```
+
+There are also many functions for cluster analysis in NetworkX. We have one problem though: many algorithms can only work on connected components, as some calculations are not possible on disconnected nodes. 
+
+How many connected components does the network contain? What is the size of each component? Why is it not a problem if we just take the largest connected component? 
+
+If we want to extract the component, we can get the list of nodes from the _connected_components_ function. Since this is a [generator function](https://wiki.python.org/moin/Generators), it is an iterable and does not actually produce an output when you call it; it only produces output when you iterate over it. This is beneficial when each value in the generator would be so large that the entire generator output would clog up memory, but we are only working with a small network. Therefore, we can just place the results in a list. 
+
+We actually still need to extract the subgraph once we have the node list.
+
+```{r component, eval=FALSE}
+nx.number_connected_components(network)
+components = nx.connected_components(network)
+for component in components:
+  print(len(component))
+
+component = list(nx.connected_components(network))[0]
+component = nx.subgraph(network, component)
+```
+
+Now we have the connected component, we can run connectivity-based algorithms. The connectivity is the number of nodes or edges (in this implementation, the number of nodes) that need to be removed to break a graph into smaller components. 
+
+In this case, we will see which maximal subgraph of the network has at least a connectivy of _k_. This means that at least _k_ nodes need to be removed to further fragment the subgraph. Such a subgraph is called a [_k_-component](https://en.wikipedia.org/wiki/Connectivity_(graph_theory)). This function can take some time to run!
+
+The components are returned as a dictionary containing a set, where the dictionary keys are the tested connectivities. To count the number of nodes in each component, we need to iterate slightly differently. 
+
+Which levels of _k_ were tested? How many components are found per _k_? What is the size of the component? Try extracting these values yourself. 
+
+```{r k-connectivity, eval=FALSE}
+components = nx.k_components(component)
+```
+
+For many applications, [shortest paths](https://networkx.github.io/documentation/stable/reference/algorithms/shortest_paths.html#module-networkx.algorithms.shortest_paths.generic) can be interesting. A shortest path is the path from one node to another node that has a minimum length compared to other paths; hence, there can be more than one shortest path per node pair. Extracting all shortest paths from the network is rather straightforward. 
+
+Can you get the shortest path from node 545306 to node 1088618? How long is it? Are there [other shortest paths](https://testfixsphinx.readthedocs.io/en/latest/reference/generated/networkx.algorithms.shortest_paths.generic.all_shortest_paths.html) between these nodes? And between node 545306 and node 1002658?
+
+```{r short, eval=FALSE}
+paths = nx.shortest_path(network)
+
+paths['545306']['1002658']
+```
+
+Several centralities and algorithms are derived from shortest paths. For example, [small-worldness coefficients](https://networkx.github.io/documentation/stable/reference/algorithms/smallworld.html#module-networkx.algorithms.smallworld) use shortest paths. Would you say that this is a small world network based on the [sigma](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.smallworld.sigma.html#networkx.algorithms.smallworld.sigma) or [omega](https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.smallworld.omega.html#networkx.algorithms.smallworld.omega) coefficients?
+
+Be warned: these functions can take rather long! Do not forget to set the niter and nrand parameters so they take less time. 
+
+```{r smallworld, eval=FALSE}
+nx.sigma(component, niter=10, nrand=5)
+nx.omega(component, niter=10, nrand=5)
+```
+
+For an overview of the functions in NetworkX, check out the [reference](https://testfixsphinx.readthedocs.io/en/latest/reference/index.html). In addition to algorithms for graph analysis, NetworkX contains several algorithms for constructing graphs with specific topologies.
