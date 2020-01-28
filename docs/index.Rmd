@@ -8,6 +8,8 @@ This repository contains all presentations and tutorial material for my workshop
 
 ## 2020
 
+[Tutorial overview PPTX](https://github.com/ramellose/networktutorials/raw/master/Workshop%20network%20analysis%202020/Workshop%20overview.pptx)
+
 [Installation instructions](https://ramellose.github.io/networktutorials/installation.html)
 
 [Network analysis with Python](https://ramellose.github.io/networktutorials/python_networks.html)
