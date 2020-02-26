@@ -137,7 +137,7 @@ ggplot(data=networks, aes(x=FlashWeave, y=SpiecEasi)) + geom_point(alpha=0.05) +
 
 ```
 
-Not only is the overlap between assocations much larger, the centralities are rather well correlated. A node that is central in the FlashWeave network tends to be central in the SpiecEasi network. However, we do see that nodes at the 'intermediate' end have a lot of variablity, and not all nodes that are central in the Flashweave network are very centrla in the SpiecEasi. 
+Not only is the overlap between assocations much larger, the centralities are rather well correlated. A node that is central in the FlashWeave network tends to be central in the SpiecEasi network. However, we do see that nodes at the 'intermediate' end have a lot of variablity, and not all nodes that are central in the Flashweave network are very central in the SpiecEasi. 
 
 One reason for this variability could be that the edges are conserved at higher taxonomic levels: sometimes, one taxon from a specific genus may have a significant association, but in a different network, another taxon from the same genus may get that association. We can look into this by agglomerating abundances by taxonomy. 
 
