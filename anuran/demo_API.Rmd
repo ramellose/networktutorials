@@ -28,7 +28,7 @@ Each function in the package is part of a [module](https://ramellose.github.io/a
 
 The _draw_ module contains code for generating figures with Seaborn, while the _utils_ module contains functions that need to be imported by the other modules. For example, we generate the null models in parallel to reduce the computational time that _anuran_ needs. The actual edge swapping is therefore implemented in _utils_, so the _nulls_ module can import it and run several instances in parallel. Since you will not need to access these functions directly, you can ignore them. 
 
-The _centrality_ and _graphvals_ modules contain functions for calculating properties from groups of networks. If you want to change the centrality scores or graph properties, you can change functions in these models to do this. With the _nulls_ module, you can get the null models to do your own analysis, while you might adapt the _sets_ module to change the definition of an intersection. For example, you might choose to define an intersection as a group of edges where two matching edges do not need to have the same association partners, but the association partners do need to be from the same family.  
+The _centrality_ and _graphvals_ modules contain functions for calculating properties from groups of networks. If you want to change the centrality scores or graph properties, you can change functions in these modules to do this. With the _nulls_ module, you can get the null models to do your own analysis, while you might adapt the _sets_ module to change the definition of an intersection. For example, you might choose to define an intersection as a group of edges where two matching edges do not need to have the same association partners, but the association partners do need to be from the same family.  
 
 In this case, we will generate some null models first. We will use two networks that we inferred from [the arctic soil data set](https://sfamjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.1462-2920.2010.02277.x). with two different software methods. Download them from these links: [SPIEC-EASI](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/arctic_spiec.graphml) and [FlashWeave](https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/arctic_flash.graphml) by right-clicking the page, selecting 'Save page as...' and saving them as .graphml files. 
 
@@ -160,23 +160,26 @@ for (filename in all_filenames){
 
 ## Centralities
 
-Do you want to change the centrality measure for your particular analysis? _anuran_ only has one function that calculates all the centralities. Since most NetworkX centrality functions have interchangeable outputs, you can just adapt this function. It is located in the centralities module. A simple way to edit _anuran_ is to download the zip file from Github and extract it. Then, navigate to the appropriate module so you can edit the centralities function.
+Do you want to change the centrality measure for your particular analysis? _anuran_ only has one function that calculates all the centralities. Since most NetworkX centrality functions have interchangeable outputs, you can just adapt this function. It is located in the centralities module. A simple way to edit _anuran_ is to download the zip file from Github and extract it. Then, navigate to the _utils_ module so you can edit the centralities function.
 
 ```{r centrality, eval=FALSE}
-def generate_centralities(networks):
+def _generate_centralities_parallel(model_list):
     """
-    This function constructs lists with centrality rankings of nodes in multiple networks.
-    Instead of using the absolute degree or betweenness centrality, this takes metric bias into account.
+    This function takes a list of null models or networks,
+    where each item in the list is a tuple.
+    The tuple contains the network name and the NetworkX object.
+    This function adds centrality rankings to the tuple.
 
-    :param networks: List of input networks
-    :return: Pandas dataframe with rankings
+    :param model_list: List of list of networks, with networks given as a tuple (name and networkX object)
+    :return:
     """
-    properties = {x: list() for x in ['Degree', 'Closeness', 'Betweenness']}
-    for network in networks:
-        properties['Degree'].append((network[0], centrality_percentile(nx.degree_centrality(network[1]))))
-        properties['Closeness'].append((network[0], centrality_percentile(nx.closeness_centrality(network[1]))))
-        properties['Betweenness'].append((network[0], centrality_percentile(nx.betweenness_centrality(network[1]))))
-    return properties
+    centrality_list = []
+    for network in model_list:
+        centrality_list.append((network[0], network[1],
+                                {'Degree': _centrality_percentile(nx.degree_centrality(network[1])),
+                                 'Closeness': _centrality_percentile(nx.closeness_centrality(network[1])),
+                                 'Betweenness': _centrality_percentile(nx.betweenness_centrality(network[1]))}))
+    return centrality_list
 
 ```
 
@@ -186,21 +189,26 @@ We can try adding another centrality from [here](https://networkx.github.io/docu
 Let's add the load centrality. Try to add another centrality that you are interested in as well. 
 
 ```{r centrality2, eval=FALSE}
-def generate_centralities(networks):
+def _generate_centralities_parallel(networks):
+def _generate_centralities_parallel(model_list):
     """
-    This function constructs lists with centrality rankings of nodes in multiple networks.
-    Instead of using the absolute degree or betweenness centrality, this takes metric bias into account.
+    This function takes a list of null models or networks,
+    where each item in the list is a tuple.
+    The tuple contains the network name and the NetworkX object.
+    This function adds centrality rankings to the tuple.
 
-    :param networks: List of input networks
-    :return: Pandas dataframe with rankings
+    :param model_list: List of list of networks, with networks given as a tuple (name and networkX object)
+    :return:
     """
-    properties = {x: list() for x in ['Degree', 'Closeness', 'Betweenness', 'Load']}
-    for network in networks:
-        properties['Degree'].append((network[0], centrality_percentile(nx.degree_centrality(network[1]))))
-        properties['Closeness'].append((network[0], centrality_percentile(nx.closeness_centrality(network[1]))))
-        properties['Betweenness'].append((network[0], centrality_percentile(nx.betweenness_centrality(network[1]))))
-        properties['Load'].append((network[0], centrality_percentile(nx.load_centrality(network[1]))))
-    return properties
+    centrality_list = []
+    for network in model_list:
+        centrality_list.append((network[0], network[1],
+                                {'Degree': _centrality_percentile(nx.degree_centrality(network[1])),
+                                 'Closeness': _centrality_percentile(nx.closeness_centrality(network[1])),
+                                 'Betweenness': _centrality_percentile(nx.betweenness_centrality(network[1])),
+                                 'Load': _centrality_percentile(nx.load_centrality(network[1]))}))
+    return centrality_list
+    
 ```
 
 After you have made your changes, navigate to the folder where you unzipped the _anuran_ repository. It should contain a file called setup.py
