@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="all weights" attr.type="string" for="edge" id="d9"/>
+<key attr.name="weight" attr.type="double" for="edge" id="d8"/>
+<key attr.name="Rank7" attr.type="double" for="node" id="d7"/>
+<key attr.name="Rank6" attr.type="string" for="node" id="d6"/>
+<key attr.name="Rank5" attr.type="string" for="node" id="d5"/>
+<key attr.name="Rank4" attr.type="string" for="node" id="d4"/>
+<key attr.name="Rank3" attr.type="string" for="node" id="d3"/>
+<key attr.name="Rank2" attr.type="string" for="node" id="d2"/>
+<key attr.name="Rank1" attr.type="string" for="node" id="d1"/>
+<key attr.name="mv" attr.type="long" for="node" id="d0"/>
+<graph edgedefault="undirected"><node id="1136344">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhizobiales</data>
+  <data key="d5">f__Phyllobacteriaceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="133533">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Pseudomonadales</data>
+  <data key="d5">f__Pseudomonadaceae</data>
+  <data key="d6">g__Pseudomonas</data>
+  <data key="d7">nan</data>
+</node>
+<node id="222087">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Solibacteres</data>
+  <data key="d4">o__Solibacterales</data>
+  <data key="d5">f__Solibacteraceae</data>
+  <data key="d6">g__Candidatus Solibacter</data>
+  <data key="d7">nan</data>
+</node>
+<node id="279138">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Xanthomonadales</data>
+  <data key="d5">f__Sinobacteraceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="1126251">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Acidimicrobiia</data>
+  <data key="d4">o__Acidimicrobiales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="1133738">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__WPS-2</data>
+  <data key="d3">c__</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="607006">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__[Chloracidobacteria]</data>
+  <data key="d4">o__RB41</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="206038">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Thermoleophilia</data>
+  <data key="d4">o__Gaiellales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="3431064">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Gemmatimonadetes</data>
+  <data key="d3">c__Gemmatimonadetes</data>
+  <data key="d4">o__N1423WL</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="4411">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhodospirillales</data>
+  <data key="d5">f__Acetobacteraceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="545290">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Verrucomicrobia</data>
+  <data key="d3">c__[Spartobacteria]</data>
+  <data key="d4">o__[Chthoniobacterales]</data>
+  <data key="d5">f__[Chthoniobacteraceae]</data>
+  <data key="d6">g__DA101</data>
+  <data key="d7">nan</data>
+</node>
+<node id="214584">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Betaproteobacteria</data>
+  <data key="d4">o__Ellin6067</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="512006">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Acidobacteriia</data>
+  <data key="d4">o__Acidobacteriales</data>
+  <data key="d5">f__Acidobacteriaceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="1129210">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Acidobacteriia</data>
+  <data key="d4">o__Acidobacteriales</data>
+  <data key="d5">f__Koribacteraceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="1128503">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhizobiales</data>
+  <data key="d5">f__Rhodobiaceae</data>
+  <data key="d6">g__Afifella</data>
+  <data key="d7">nan</data>
+</node>
+<node id="209662">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhizobiales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="112867">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Chloroflexi</data>
+  <data key="d3">c__Ellin6529</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="733712">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__iii1-8</data>
+  <data key="d4">o__32-20</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="206565">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Pseudomonadales</data>
+  <data key="d5">f__Pseudomonadaceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="4465309">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Acidimicrobiia</data>
+  <data key="d4">o__Acidimicrobiales</data>
+  <data key="d5">f__EB1017</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="257891">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Ellin329</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="4330207">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhizobiales</data>
+  <data key="d5">f__Hyphomicrobiaceae</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="4424785">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Acidobacteria-6</data>
+  <data key="d4">o__iii1-15</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="113212">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__DA052</data>
+  <data key="d4">o__Ellin6513</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+  <data key="d7">nan</data>
+</node>
+<node id="334186">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhizobiales</data>
+  <data key="d5">f__Hyphomicrobiaceae</data>
+  <data key="d6">g__Pedomicrobium</data>
+  <data key="d7">nan</data>
+</node>
+<edge source="1136344" target="133533">
+  <data key="d8">0.19647166364617802</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.38017040491104126, 'arctic_genus_spiec.graphml': 0.0127729223813148}</data>
+</edge>
+<edge source="133533" target="1129210">
+  <data key="d8">-0.29839269645518485</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.5663893415056201, 'arctic_genus_spiec.graphml': -0.0303960514047496}</data>
+</edge>
+<edge source="222087" target="279138">
+  <data key="d8">0.33015435287351624</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.6565175624356948, 'arctic_genus_spiec.graphml': 0.00379114331133762}</data>
+</edge>
+<edge source="279138" target="1128503">
+  <data key="d8">-0.3853453808568813</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.7216340353319305, 'arctic_genus_spiec.graphml': -0.0490567263818321}</data>
+</edge>
+<edge source="279138" target="1129210">
+  <data key="d8">0.5670033943577943</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.9618549942970276, 'arctic_genus_spiec.graphml': 0.172151794418561}</data>
+</edge>
+<edge source="279138" target="4330207">
+  <data key="d8">-0.3225019150558814</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.5735616352795723, 'arctic_genus_spiec.graphml': -0.0714421948321905}</data>
+</edge>
+<edge source="279138" target="512006">
+  <data key="d8">0.3296115237379218</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.5054752230644226, 'arctic_genus_spiec.graphml': 0.153747824411421}</data>
+</edge>
+<edge source="279138" target="334186">
+  <data key="d8">-0.44671146062033396</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.804175078868866, 'arctic_genus_spiec.graphml': -0.0892478423718019}</data>
+</edge>
+<edge source="1126251" target="1133738">
+  <data key="d8">0.45786840298014947</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.7383773326873779, 'arctic_genus_spiec.graphml': 0.177359473272921}</data>
+</edge>
+<edge source="1126251" target="607006">
+  <data key="d8">-0.19196528337619098</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.37232274683760147, 'arctic_genus_spiec.graphml': -0.0116078199147805}</data>
+</edge>
+<edge source="1126251" target="206565">
+  <data key="d8">0.32135170521300555</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.5825179219245911, 'arctic_genus_spiec.graphml': 0.06018548850142}</data>
+</edge>
+<edge source="1126251" target="257891">
+  <data key="d8">0.3241575115942652</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.6069735288619995, 'arctic_genus_spiec.graphml': 0.0413414943265309}</data>
+</edge>
+<edge source="607006" target="4411">
+  <data key="d8">-0.4044585016528818</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.6508334958356745, 'arctic_genus_spiec.graphml': -0.158083507470089}</data>
+</edge>
+<edge source="607006" target="545290">
+  <data key="d8">0.41601121357368254</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.8274279832839966, 'arctic_genus_spiec.graphml': 0.00459444386336849}</data>
+</edge>
+<edge source="607006" target="733712">
+  <data key="d8">0.3059981136471504</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.5337092876434326, 'arctic_genus_spiec.graphml': 0.0782869396508682}</data>
+</edge>
+<edge source="206038" target="3431064">
+  <data key="d8">0.2819187094787147</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.5060030817985535, 'arctic_genus_spiec.graphml': 0.057834337158876}</data>
+</edge>
+<edge source="214584" target="512006">
+  <data key="d8">-0.4565523110136387</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.859886646270752, 'arctic_genus_spiec.graphml': -0.0532179757565254}</data>
+</edge>
+<edge source="214584" target="733712">
+  <data key="d8">0.22896709165992482</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.4493800401687622, 'arctic_genus_spiec.graphml': 0.00855414315108743}</data>
+</edge>
+<edge source="512006" target="112867">
+  <data key="d8">-0.38109146741363786</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.7273518443107605, 'arctic_genus_spiec.graphml': -0.0348310905165152}</data>
+</edge>
+<edge source="1129210" target="209662">
+  <data key="d8">-0.2744754912800831</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.5203896760940552, 'arctic_genus_spiec.graphml': -0.028561306466111}</data>
+</edge>
+<edge source="1129210" target="4424785">
+  <data key="d8">-0.28399693918153</data>
+  <data key="d9">{'arctic_genus_flash.graphml': -0.5424405118129996, 'arctic_genus_spiec.graphml': -0.0255533665500605}</data>
+</edge>
+<edge source="1129210" target="113212">
+  <data key="d8">0.519776344806659</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.8083951339913181, 'arctic_genus_spiec.graphml': 0.231157555622}</data>
+</edge>
+<edge source="209662" target="4465309">
+  <data key="d8">0.4648257047636668</data>
+  <data key="d9">{'arctic_genus_flash.graphml': 0.8285812735557556, 'arctic_genus_spiec.graphml': 0.101070135971578}</data>
+</edge>
+</graph></graphml>
