@@ -199,7 +199,10 @@ $(document).ready(function () {
 library(phyloseq)
 library(ggplot2)
 library(igraph)
-phyloseqobj.f &lt;- readRDS(&quot;spiec_phyloseq.rds&quot;)
+otus &lt;- read.table(&quot;../Workshop network analysis 2019/spiec_otus.txt&quot;)
+tax &lt;- read.table(&quot;../Workshop network analysis 2019/spiec_tax.txt&quot;)
+
+phyloseqobj.f &lt;- phyloseq(otu_table(otus, taxa_are_rows = TRUE), tax_table(tax))
 data &lt;- t(data.frame(otu_table(phyloseqobj.f)))</code></pre>
 <pre><code>## ==========================================================================
 ## *
