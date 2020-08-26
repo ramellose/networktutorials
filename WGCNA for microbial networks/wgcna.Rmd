@@ -13,35 +13,31 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Although WGCNA was originally developed for gene co-expression networks, it can also be used to generate microbial co-occurrence networks. One of the major advantages of WGCNA is that it tries to find a scale-free network and identifies module memberships [(Langfelder & Horvath, 2008)](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-559). Therefore, this tool tends to generate networks with clear hub species, rather than a giant hairball. However, [the original WGCNA tutorials](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/) do not include preprocessing steps that may be more appropriate for microbial data analysis. Therefore, this tutorial describes how to run WGCNA on a 16S rRNA dataset. Some of the code was adapted from the original WGCNA tutorials. 
 
-We are going to work on the phyloseq object 'spiec_phyloseq.RDS', which you can download [here](https://github.com/ramellose/networktutorials/tree/master/Workshop%20network%20analysis%202019). As WGCNA cannot work directly on phyloseq objects, let's extract the abundance table first. Keep in mind that WGCNA needs to have the taxa as columns. 
+We are going to work on a phyloseq object that can be downloaded  [here](https://github.com/ramellose/networktutorials/tree/master/Workshop%20network%20analysis%202019). As WGCNA cannot work directly on phyloseq objects, let's extract the abundance table first. Keep in mind that WGCNA needs to have the taxa as columns. 
 
-```{r imports, eval=FALSE}
+```{r imports}
 library(WGCNA)
 library(phyloseq)
 library(ggplot2)
 library(igraph)
-phyloseqobj.f <- readRDS("spiec_phyloseq.rds")
-data <- t(data.frame(otu_table(phyloseqobj.f)))
-```
-```{r imports_real, message=FALSE, warning=FALSE, echo=FALSE}
-library(WGCNA)
-library(phyloseq)
-library(ggplot2)
-library(igraph)
-phyloseqobj.f <- readRDS("~/networktutorials/Workshop network analysis 2019/spiec_phyloseq.rds")
-data <- t(data.frame(otu_table(phyloseqobj.f)))
+library(compositions)
+
+### If you can't import the file:
+### Download the spiec_otus.txt files from https://github.com/ramellose/networktutorials
+### They are in the Workshop folder
+### This file is already preprocessed!
+otus <- read.table("../Workshop network analysis 2019/spiec_otus.txt")
+tax <- as.matrix(read.table("../Workshop network analysis 2019/spiec_tax.txt"))
+phyloseqobj.f <- phyloseq(otu_table(otus, taxa_are_rows = TRUE), tax_table(tax))
+
 ```
 
 ## Preprocessing the data
 
-The abundance table is still in absolute counts - but this is not quantitative data. While SPIEC-EASI carries out a clr transform internally, WGCNA does no such thing. Therefore, we will first transform the data before analysis with [the compositions package](https://www.rdocumentation.org/packages/compositions/versions/1.40-2/topics/clr). The WGCNA contains a function to remove taxa with too many zeroes, so we can apply this first. 
+The abundance table is still in absolute counts - but this is not quantitative data. While SPIEC-EASI carries out a clr transform internally, WGCNA does no such thing. Therefore, we will first transform the data before analysis with [the compositions package](https://www.rdocumentation.org/packages/compositions/versions/1.40-2/topics/clr). 
 
 ```{r processing, message=FALSE, echo=FALSE, warning=FALSE}
-badtaxa <- goodSamplesGenes(data)
-# is the data OK? 
-print(badtaxa$allOK)
-
-library(compositions)
+data <- t(data.frame(otu_table(phyloseqobj.f)))
 data <- data + 1  # pseudocount
 data <- clr(data)
 ```
@@ -80,7 +76,7 @@ heatmap(TOM, labRow=FALSE, labCol=FALSE)
 
 Let's explore the effect some of the WGCNA settings have on our dataset by running the 1-step network construction and module detection function. We'll use the TOM to construct a network and then overlay cluster assignments to see how the signed vs the unsigned TOM are different. First, we run network inference & construction on the unsigned network type. 
 
-```{r WGCNA unsigned}
+```{r WGCNA unsigned, eval=FALSE}
 adjacency = adjacency(data, power=6, type="unsigned")
 adjacency[adjacency < 0] = 0
 adjacency[adjacency > 1] = 1
@@ -100,7 +96,7 @@ plot(network, layout=layout.fruchterman.reingold(network), edge.arrow.size = 0.2
 
 Next, we do the same but set the network type and TOM type to signed. 
 
-```{r WGCNA signed}
+```{r WGCNA signed, eval=FALSE}
 adjacency = adjacency(data, power=6, type="signed")
 adjacency[adjacency < 0] = 0
 adjacency[adjacency > 1] = 1
