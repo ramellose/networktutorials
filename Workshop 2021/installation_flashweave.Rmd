@@ -1,5 +1,5 @@
 ---
-title: "Installation instructions"
+title: "Installing FlashWeave"
 author: "Lisa Rottjers"
 date: "12 januari 2021"
 output: html_document
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 FlashWeave is a network inference method written in Julia and was developed by the Mering Lab.
 This network inference method has several properties that make it especially suitable for inference of large numbers of networks. It includes a method for filtering indirect edges, can include metadata and, perhaps most importantly, is very fast. 
 
-In this tutorial, we will walk you through installation and operation of FlashWeave in a little more detail compared to the instructions available on the FlashWeave repository. Specifically, we will highlight how you need to install and run Julia.  
+In this tutorial, we will walk you through installation and operation of FlashWeave in a little more detail compared to the instructions available on the FlashWeave repository. Specifically, we will highlight how you need to install and run Julia. If you already know how to do this, you can use the simpler instructions in the Github repository. 
 
 FlashWeave's Github repository: [https://github.com/meringlab/FlashWeave.jl](https://github.com/meringlab/FlashWeave.jl)  
 Article: [Rapid Inference of Direct Interactions in Large-Scale Ecological Networks from Heterogeneous Microbial Sequencing Data](https://www.cell.com/cell-systems/fulltext/S2405-4712(19)30271-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405471219302716%3Fshowall%3Dtrue)  
@@ -24,7 +24,7 @@ If you have not installed Julia on your computer yet, please download the approp
 After installing Julia, you should be able to start an interactive Julia session. You can start this from command line by typing `julia`. If this does not work, you can also find the location of the Julia executable and click this to run. 
 
 ```{r juliafig, fig.margin=TRUE, out.width='50%', echo=FALSE, caption="Screenshot of Julia"}
-knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%%2021/julia1.PNG")
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%202021/julia1.png")
 ```
 
 [Juno](http://docs.junolab.org/stable/) is a popular IDE (interactive development environment) for Julia. This environment requires [Atom](https://atom.io/) to run. If you want, you can follow the Juno installation instructions to install Atom, Julia and Juno. [Installation instructions](http://docs.junolab.org/stable/man/installation/)
@@ -45,3 +45,9 @@ When you want to use a package for the first time, Julia needs some time to comp
 ```{r flashweave2, message=FALSE, eval=FALSE}
 using FlashWeave
 ```
+
+[Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)
+
+## References
+
+[Tackmann, J., Rodrigues, J. F. M., & von Mering, C. (2019). Rapid inference of direct interactions in large-scale ecological networks from heterogeneous microbial sequencing data. Cell systems, 9(3), 286-296.](https://www.cell.com/cell-systems/fulltext/S2405-4712(19)30271-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405471219302716%3Fshowall%3Dtrue)

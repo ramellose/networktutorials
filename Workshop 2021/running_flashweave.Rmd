@@ -1,5 +1,5 @@
 ---
-title: "Installation instructions"
+title: "Running FlashWeave on sponge networks"
 author: "Lisa Rottjers"
 date: "12 januari 2021"
 output: html_document
@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 In this tutorial, we will write a small script to run network inference with FlashWeave on a group of BIOM files. These files are derived from samples collected for the Sponge Microbiome Project (Moitinho-Silva et al., 2017). Each file contains a collection of samples collected from a single sponge order. 
 
 You can download the files from the Github repository:
-[link to zip BIOM files](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges.zip). Unzip the files in a location of your choice. 
+[link to zip BIOM files](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges.zip).   Unzip the files in a location of your choice. 
 
-In the script below, change the data_path C://Users//Username//Documents//Workshop to the location where your files are stored. The script will read each of the files in the folder, so make sure only the BIOM files are in the folder. 
+In the script below, change the data_path `C:/Users/Username/Documents/Workshop/sponges` to the location where your files are stored. The script will read each of the files in the folder, so make sure only the BIOM files are in the folder. 
 
 ```{r flashweave, message=FALSE, eval=FALSE}
 using FlashWeave
@@ -34,6 +34,10 @@ end
 
 The script looks for all files in the sponges folder. Each file is provided to FlashWeave and the inferred network is then stored as a .gml file. Note that for FlashWeave performance, the sensitive and heterogeneous settings matter a lot; their importance is described in more detail in the FlashWeave publication. 
 
+[Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)
+
 ## References
 
-[Moitinho-Silva, L., Nielsen, S., Amir, A., Gonzalez, A., Ackermann, G. L., Cerrano, C., ... & Thomas, T. (2017). The sponge microbiome project. Gigascience, 6(10), gix077.](https://academic.oup.com/gigascience/article/6/10/gix077/4082886?login=true)
+[Moitinho-Silva, L., Nielsen, S., Amir, A., Gonzalez, A., Ackermann, G. L., Cerrano, C., ... & Thomas, T. (2017). The sponge microbiome project. Gigascience, 6(10), gix077.](https://academic.oup.com/gigascience/article/6/10/gix077/4082886?login=true)  
+
+[Tackmann, J., Rodrigues, J. F. M., & von Mering, C. (2019). Rapid inference of direct interactions in large-scale ecological networks from heterogeneous microbial sequencing data. Cell systems, 9(3), 286-296.](https://www.cell.com/cell-systems/fulltext/S2405-4712(19)30271-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405471219302716%3Fshowall%3Dtrue)

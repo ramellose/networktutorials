@@ -17,7 +17,8 @@ However, after that, feel free to choose an analysis method of your choice and k
 During the hands-on, Lisa will demonstrate how to use the anuran method to analyze FlashWeave results. 
 
 The following tutorials are available:  
-* [FlashWeave]()  
+* [Installing FlashWeave]()  
+* [Running FlashWeave on sponge networks]()  
 * [Working with igraph in R]()  
 * [Working with NetworkX in Python]()  
 * [Running manta on FlashWeave networks]()  
