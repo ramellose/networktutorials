@@ -1,0 +1,19 @@
+---
+title: "Installation instructions"
+author: "Lisa Rottjers"
+date: "12 januari 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+In this tutorial, we will write a small script to run network inference with FlashWeave on a group of BIOM files. These files are derived from samples collected for the Sponge Microbiome Project (Moitinho-Silva et al., 2017). Each file contains a collection of samples collected from a single sponge order. 
+
+
+
+## References
+
+[Moitinho-Silva, L., Nielsen, S., Amir, A., Gonzalez, A., Ackermann, G. L., Cerrano, C., ... & Thomas, T. (2017). The sponge microbiome project. Gigascience, 6(10), gix077.](https://academic.oup.com/gigascience/article/6/10/gix077/4082886?login=true)

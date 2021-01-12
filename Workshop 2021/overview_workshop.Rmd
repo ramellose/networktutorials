@@ -1,0 +1,28 @@
+---
+title: "Installation instructions"
+author: "Lisa Rottjers"
+date: "12 januari 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This hands-on workshop is part of the Microbiome Data Analyses Workshop (Hasselt, 2021). 
+In this workshop, we will introduce a new method for network inference and we will walk you through the steps necessary to start analyzing your network with other software. 
+
+We recommend first going through the FlashWeave tutorial, so you have a network to work with. 
+However, after that, feel free to choose an analysis method of your choice and keep working on this. 
+During the hands-on, Lisa will demonstrate how to use the anuran method to analyze FlashWeave results. 
+
+The following tutorials are available:
+* [FlashWeave]()
+* [Working with igraph in R]()
+* [Working with NetworkX in Python]()
+* [Running manta on FlashWeave networks]()
+* [Running anuran on FlashWeave networks]()
+
+
+
+
