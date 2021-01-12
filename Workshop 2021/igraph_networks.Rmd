@@ -1,0 +1,86 @@
+---
+title: "Network analysis in igraph"
+author: "Lisa Rottjers"
+date: "12 januari 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importing a network
+
+To work with igraph, we first need a network. For this tutorial, we will use the networks from the FlashWeave tutorial: [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)).   
+If you were unable to run FlashWeave, please find the networks here: [ZIP file with networks](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges_networks.zip). 
+
+```{r read_graph, eval=FALSE}
+library(igraph)
+setwd('C:/Users/user/Documents/workshop')
+network_loc <- 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
+network = read_graph(paste(network_loc, 'Axinellida.gml', sep=''), format='gml')
+```
+
+## Accessing the igraph object
+
+What information is already in the network? We can see the node and edge metadata by accessing a single node or edge. 
+Fill in the nodename and edgename variables yourself. 
+Do not forget the round brackets; with NetworkX, we index the network object with a [tuple](https://www.w3schools.com/python/python_tuples.asp) of the two nodes that participate in the edge. 
+
+```{r access, eval=FALSE}
+print(V(network))
+print(E(network))
+nodename = 
+edgename = 
+
+vertex_attributes <- get.vertex.attribute(network)
+edge_attributes <- get.edge.attribute(network)
+
+print(vertex_attributes) 
+print(edge_attributes) 
+
+```
+
+Unfortunately, the taxonomy is not contained in the node metadata. This we can address by reading the original BIOM file. You can download the processed BIOM files from the Github repository:
+[link to zip BIOM files](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges.zip) Unzip the files in a location of your choice.   
+We can read the BIOM file with [phyloseq](https://joey711.github.io/phyloseq/), extract the taxonomic information and add this to the networks. 
+
+The command below adds the taxonomy for the Axinellida network; can you print the complete taxonomy for taxon c4357330?  
+
+```{r taxdict, eval=FALSE}
+library(phyloseq)
+# read BIOM file 
+biom_loc <- ('C:/Users/user/Documents/workshop/sponges/')  # Change to the folder where you downloaded the files
+biom_file <- import_biom(paste(biom_loc, "Axinellida.biom", sep=''))
+tax <- data.frame(tax_table(biom_file))
+
+for (col in colnames(tax)){
+  network <- set.vertex.attribute(network, value=tax[[col]], name=col)
+}
+
+```
+
+Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. We also store them in a named list so they can be used for other analyses. 
+
+```{r taxdict_loop, eval=FALSE}
+# Get a list of all files and remove the .gml extension
+network_names <- list.files("sponges_networks")
+network_list <- list()
+for (name in network_names){
+  network = read_graph(paste(network_loc, name, sep=''), format='gml')
+  # read BIOM file
+  biom_file <- import_biom(paste(biom_loc, substr(name, 1, nchar(name)-4), '.biom', sep=''))
+  tax <- data.frame(tax_table(biom_file))
+  for (col in colnames(tax)){
+    network <- set.vertex.attribute(network, value=tax[[col]], name=col)
+    network_list[[substr(name, 1, nchar(name)-4)]] <- network
+    write_graph(network, format="graphml")
+  }
+}
+
+```
+
+
+For an overview of the functions in igraph, check out the [reference manual](https://igraph.org/r/doc/). 
+
+[Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)

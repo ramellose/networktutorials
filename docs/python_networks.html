@@ -196,7 +196,7 @@ If you were unable to run FlashWeave, please find the networks here: <a href="ht
 <pre class="r"><code>import networkx as nx
 import pandas as pd
 import biom
-network_loc = ('C:/Users/user/Documents/workshop/sponges_networks/')  # Change to the folder where you downloaded the files
+network_loc = 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
 network = nx.read_gml(network_loc + 'Axinellida.gml')</code></pre>
 </div>
 <div id="accessing-the-networkx-object" class="section level2">
@@ -213,7 +213,7 @@ print(network.edges[edgename]) </code></pre>
 We first iterate to create a dictionary of dictionaries; the top-level dictionary contains the taxonomy levels, while the lower-level dictionaries contain the node - taxonomy values.</p>
 <p>The command below constructs the dict of dicts from the BIOM file; can you print the complete taxonomy for taxon c4357330?</p>
 <pre class="r"><code># read BIOM file 
-biom_loc = ('C:/Users/user/Documents/workshop/sponges/')  # Change to the folder where you downloaded the files
+biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  # Change to the folder where you downloaded the files
 biom_file = biom.load_table(biom_loc + &quot;Axinellida.biom&quot;)
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes

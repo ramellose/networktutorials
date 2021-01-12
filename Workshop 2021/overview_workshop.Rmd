@@ -19,8 +19,8 @@ During the hands-on, Lisa will demonstrate how to use the anuran method to analy
 The following tutorials are available:  
 * [Installing FlashWeave](https://ramellose.github.io/networktutorials/installation_flashweave.html)  
 * [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)
-* [Working with igraph in R]()  
-* [Working with NetworkX in Python]()  
+* [Working with igraph in R](https://ramellose.github.io/networktutorials/igraph_networks.html)  
+* [Working with NetworkX in Python](https://ramellose.github.io/networktutorials/python_networks.html)  
 * [Running manta on FlashWeave networks]()  
 * [Running anuran on FlashWeave networks]()  
 
