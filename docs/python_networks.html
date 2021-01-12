@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">Network analysis in Python</h1>
 <h4 class="author">Lisa Rottjers</h4>
-<h4 class="date">27 januari 2020</h4>
+<h4 class="date">12 januari 2021</h4>
 
 </div>
 
@@ -191,13 +191,13 @@ summary {
 </div>
 <div id="importing-a-network" class="section level2">
 <h2>Importing a network</h2>
-<p>To play with NetworkX, we first need a network. When we construct a network with SpiecEasi, it does not yet have the taxonomy included. Download <a href="https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/raw_spiec.graphml">the unprocessed network</a> and <a href="https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%20network%20analysis%202020/raw_tax.txt">the taxonomy</a> and read them.</p>
-<pre class="r"><code>import os
-import networkx as nx
+<p>To play with NetworkX, we first need a network. For this tutorial, we will use the networks from the FlashWeave tutorial: <a href="https://ramellose.github.io/networktutorials/running_flashweave.html">Running FlashWeave on sponge networks</a>).<br />
+If you were unable to run FlashWeave, please find the networks here: <a href="https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges_networks.zip">ZIP file with networks</a>.</p>
+<pre class="r"><code>import networkx as nx
 import pandas as pd
-os.chdir('C:/user/Documents/workshop')  # Change to the folder where you downloaded the files
-network = nx.read_graphml('raw_spiec.graphml')
-taxonomy = pd.read_csv('raw_tax.txt', sep='\t')</code></pre>
+import biom
+network_loc = ('C:/Users/user/Documents/workshop/sponges_networks/')  # Change to the folder where you downloaded the files
+network = nx.read_gml(network_loc + 'Axinellida.gml')</code></pre>
 </div>
 <div id="accessing-the-networkx-object" class="section level2">
 <h2>Accessing the NetworkX object</h2>
@@ -209,13 +209,14 @@ edgename =
 
 print(network.nodes[nodename]) 
 print(network.edges[edgename]) </code></pre>
-<p>The current names of the nodes might be a problem. These were assigned by igraph when the network was created from the SpiecEasi outputs, but they are not reproducible across networks. If we would make a FlashWeave network, the node names will still go from 0 to n, but they might not refer to the same taxa.</p>
-<p>We can easily rename nodes with a <a href="https://www.w3schools.com/python/python_dictionaries.asp">dictionary</a>. Since the names are already stored in the node metadata, we can actually extract the dictionary from there. The copy parameter is set to False; if True, NetworkX would create a new network that needs to be assigned to a variable. Now, we modify the network in place.</p>
-<pre class="r"><code>names = nx.get_node_attributes(network, 'name')
-nx.relabel_nodes(network, names, copy=False)</code></pre>
-<p>Of course, the taxonomy is still not contained in the node metadata. This we can also do by parsing the pandas dataframe so we extract dictionaries. We first iterate to create a dictionary of dictionaries; the top-level dictionary contains the taxonomy levels, while the lower-level dictionaries contain the node - taxonomy values.</p>
-<p>The command below constructs the dict of dicts; can you print the complete taxonomy for taxon 742260?</p>
-<pre class="r"><code># make dict of network attributes
+<p>Unfortunately, the taxonomy is not contained in the node metadata. This we can address by reading the original BIOM file. You can download the processed BIOM files from the Github repository: <a href="https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges.zip">link to zip BIOM files</a> Unzip the files in a location of your choice.<br />
+We first iterate to create a dictionary of dictionaries; the top-level dictionary contains the taxonomy levels, while the lower-level dictionaries contain the node - taxonomy values.</p>
+<p>The command below constructs the dict of dicts from the BIOM file; can you print the complete taxonomy for taxon c4357330?</p>
+<pre class="r"><code># read BIOM file 
+biom_loc = ('C:/Users/user/Documents/workshop/sponges/')  # Change to the folder where you downloaded the files
+biom_file = biom.load_table(biom_loc + &quot;Axinellida.biom&quot;)
+tax_table = biom_file.metadata_to_dataframe(axis='observation')
+# make dict of network attributes
 tax = dict()
 for col in taxonomy.columns:
     tax[col] = dict()
@@ -223,10 +224,33 @@ for row in taxonomy.iterrows():
     for col in taxonomy.columns:
         tax[col][str(row[0])] = row[1][col]
 
-print(tax['Rank4']['544990'])</code></pre>
+print(tax['Rank4']['c4357330'])</code></pre>
 <p>NetworkX can add node metadata with a dictionary. We can iterate over the top-level dictionary to add all the taxonomic levels. Confirm that the taxonomy addition worked by checking the node metadata again.</p>
 <pre class="r"><code>for key in tax:
     nx.set_node_attributes(network, tax[key], key)</code></pre>
+<p>Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software.</p>
+<pre class="r"><code># Get a list of all files and remove the .gml extension
+network_names =[x[:-4] for x in os.listdir()]
+network_dict = dict.fromkeys(network_names)
+for name in network_dict:
+  network = nx.read_gml(network_loc + name + '.gml')
+  # read BIOM file 
+  biom_file = biom.load_table(biom_loc + name + &quot;.biom&quot;)
+  tax_table = biom_file.metadata_to_dataframe(axis='observation')
+  # make dict of network attributes
+  tax = dict()
+  for col in taxonomy.columns:
+      tax[col] = dict()
+  for row in taxonomy.iterrows():
+      for col in taxonomy.columns:
+          tax[col][str(row[0])] = row[1][col]
+  for key in tax:
+      nx.set_node_attributes(network, tax[key], key)
+  network_dict[name] = network
+  # write network to graphml
+  nx.write_graphml(network, network_loc + name + &quot;.graphml&quot;)
+
+print(tax['Rank4']['c4357330'])</code></pre>
 <p>We can do some interesting analyses with NetworkX now that we have the complete network. For example, we can test whether the degree distribution follows a power law. For this, we first need the degree distribution. This is again given as a dictionary, but it does not matter which node has what degree. Since we cannot access the values from the DegreeView directly, we first convert it to a dictionary, extract the values and convert the values to a list.</p>
 <p>Now we have the list of degrees, we can use the <a href="https://pypi.org/project/powerlaw/">powerlaw</a> package to extract the parameters of the power law distribution fit to the data and then test whether a power law distribution or another distribution better fits the data. If the likelihood (first value) is positive, then the first distribution is more likely. If it is negative, the second distribution fits the data better. The p-value (second value) tests whether the sign of the likelihood is significant. Which distribution do you think has the best fit?</p>
 <pre class="r"><code>deg = dict(nx.degree(network))
@@ -268,6 +292,7 @@ paths['545306']['1002658']</code></pre>
 <pre class="r"><code>nx.sigma(component, niter=10, nrand=5)
 nx.omega(component, niter=10, nrand=5)</code></pre>
 <p>For an overview of the functions in NetworkX, check out the <a href="https://testfixsphinx.readthedocs.io/en/latest/reference/index.html">reference</a>. In addition to algorithms for graph analysis, NetworkX contains several algorithms for constructing graphs with specific topologies.</p>
+<p><a href="https://ramellose.github.io/networktutorials/overview_workshop.html">Back to overview</a></p>
 </div>
 
 

@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="weight" attr.type="double" for="edge" id="d7"/>
+<key attr.name="Rank6" attr.type="string" for="node" id="d6"/>
+<key attr.name="Rank5" attr.type="string" for="node" id="d5"/>
+<key attr.name="Rank4" attr.type="string" for="node" id="d4"/>
+<key attr.name="Rank3" attr.type="string" for="node" id="d3"/>
+<key attr.name="Rank2" attr.type="string" for="node" id="d2"/>
+<key attr.name="Rank1" attr.type="string" for="node" id="d1"/>
+<key attr.name="mv" attr.type="long" for="node" id="d0"/>
+<graph edgedefault="undirected"><node id="c563693">
+  <data key="d0">0</data>
+</node>
+<node id="c4475254">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Acidimicrobiia</data>
+  <data key="d4">o__Acidimicrobiales</data>
+  <data key="d5">f__wb1_P06</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c1114110">
+  <data key="d0">0</data>
+</node>
+<node id="c60159">
+  <data key="d0">0</data>
+</node>
+<node id="c4402734">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Cyanobacteria</data>
+  <data key="d3">c__Chloroplast</data>
+  <data key="d4">o__Stramenopiles</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c1120649">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__SBR1093</data>
+  <data key="d3">c__EC214</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4479618">
+  <data key="d0">0</data>
+</node>
+<node id="c60179">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhodospirillales</data>
+  <data key="d5">f__Rhodospirillaceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4294683">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Chromatiales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c104678">
+  <data key="d0">0</data>
+</node>
+<node id="c635683">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Acidimicrobiia</data>
+  <data key="d4">o__Acidimicrobiales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c1856738">
+  <data key="d0">0</data>
+</node>
+<node id="c2383902">
+  <data key="d0">0</data>
+</node>
+<node id="c4313405">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Deltaproteobacteria</data>
+  <data key="d4">o__Bdellovibrionales</data>
+  <data key="d5">f__Bdellovibrionaceae</data>
+  <data key="d6">g__Bdellovibrio</data>
+</node>
+<node id="c4375879">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Gemmatimonadetes</data>
+  <data key="d3">c__Gemm-2</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4338074">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Cyanobacteria</data>
+  <data key="d3">c__Synechococcophycideae</data>
+  <data key="d4">o__Synechococcales</data>
+  <data key="d5">f__Synechococcaceae</data>
+  <data key="d6">g__Synechococcus</data>
+</node>
+<node id="c4425583">
+  <data key="d0">0</data>
+  <data key="d1">k__Archaea</data>
+  <data key="d2">p__Crenarchaeota</data>
+  <data key="d3">c__Thaumarchaeota</data>
+  <data key="d4">o__Cenarchaeales</data>
+  <data key="d5">f__Cenarchaeaceae</data>
+  <data key="d6">g__Nitrosopumilus</data>
+</node>
+<node id="c1118935">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Alteromonadales</data>
+  <data key="d5">f__HTCC2188</data>
+  <data key="d6">g__HTCC</data>
+</node>
+<node id="c1054">
+  <data key="d0">0</data>
+  <data key="d1">Bacteria</data>
+  <data key="d2">NA</data>
+  <data key="d3">NA</data>
+  <data key="d4">NA</data>
+  <data key="d5">NA</data>
+  <data key="d6">NA</data>
+</node>
+<node id="c4424700">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Chloroflexi</data>
+  <data key="d3">c__SAR202</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c1121453">
+  <data key="d0">0</data>
+</node>
+<node id="c605566">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Nitrospirae</data>
+  <data key="d3">c__Nitrospira</data>
+  <data key="d4">o__Nitrospirales</data>
+  <data key="d5">f__Nitrospiraceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c566357">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Sva0725</data>
+  <data key="d4">o__Sva0725</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c661964">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c736040">
+  <data key="d0">0</data>
+</node>
+<node id="c1107901">
+  <data key="d0">0</data>
+</node>
+<node id="c536121">
+  <data key="d0">0</data>
+</node>
+<node id="c4376458">
+  <data key="d0">0</data>
+</node>
+<node id="c587391">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Chromatiales</data>
+  <data key="d5">f__Ectothiorhodospiraceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4361909">
+  <data key="d0">0</data>
+</node>
+<node id="c2305122">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__HTCC2188</data>
+  <data key="d5">f__HTCC2089</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4448331">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Enterobacteriales</data>
+  <data key="d5">f__Enterobacteriaceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4389958">
+  <data key="d0">0</data>
+</node>
+<node id="c4389957">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__PAUC34f</data>
+  <data key="d3">c__</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4397109">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Oceanospirillales</data>
+  <data key="d5">f__Endozoicimonaceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c3760122">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Actinobacteria</data>
+  <data key="d3">c__Acidimicrobiia</data>
+  <data key="d4">o__Acidimicrobiales</data>
+  <data key="d5">f__TK06</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c2146124">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Solibacteres</data>
+  <data key="d4">o__Solibacterales</data>
+  <data key="d5">f__PAUC26f</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c636022">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Acidobacteria</data>
+  <data key="d3">c__Acidobacteria-6</data>
+  <data key="d4">o__iii1-15</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c92920">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Thiohalorhabdales</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4481801">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Thiotrichales</data>
+  <data key="d5">f__Piscirickettsiaceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c4404499">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Bacteroidetes</data>
+  <data key="d3">c__Flavobacteriia</data>
+  <data key="d4">o__Flavobacteriales</data>
+  <data key="d5">f__Flavobacteriaceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c144099">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__</data>
+  <data key="d5">f__</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c92209">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Oceanospirillales</data>
+  <data key="d5">f__Halomonadaceae</data>
+  <data key="d6">g__Candidatus Portiera</data>
+</node>
+<node id="c1114496">
+  <data key="d0">0</data>
+</node>
+<node id="c646557">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rickettsiales</data>
+  <data key="d5">f__Pelagibacteraceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c341734">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Gammaproteobacteria</data>
+  <data key="d4">o__Alteromonadales</data>
+  <data key="d5">f__OM60</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c816411">
+  <data key="d0">0</data>
+  <data key="d1">k__Bacteria</data>
+  <data key="d2">p__Proteobacteria</data>
+  <data key="d3">c__Alphaproteobacteria</data>
+  <data key="d4">o__Rhodobacterales</data>
+  <data key="d5">f__Rhodobacteraceae</data>
+  <data key="d6">g__</data>
+</node>
+<node id="c755585">
+  <data key="d0">0</data>
+  <data key="d1">Bacteria</data>
+  <data key="d2">NA</data>
+  <data key="d3">NA</data>
+  <data key="d4">NA</data>
+  <data key="d5">NA</data>
+  <data key="d6">NA</data>
+</node>
+<node id="c824245">
+  <data key="d0">0</data>
+</node>
+<edge source="c563693" target="c4389958">
+  <data key="d7">0.21704638008561297</data>
+</edge>
+<edge source="c563693" target="c636022">
+  <data key="d7">0.3902752697467804</data>
+</edge>
+<edge source="c563693" target="c816411">
+  <data key="d7">-0.2132672208392954</data>
+</edge>
+<edge source="c4475254" target="c1120649">
+  <data key="d7">0.45006703562157946</data>
+</edge>
+<edge source="c4475254" target="c4375879">
+  <data key="d7">0.2741153470799217</data>
+</edge>
+<edge source="c4475254" target="c566357">
+  <data key="d7">0.2621524610370166</data>
+</edge>
+<edge source="c4475254" target="c92920">
+  <data key="d7">-0.1969473145683029</data>
+</edge>
+<edge source="c4475254" target="c4481801">
+  <data key="d7">0.23252237569788287</data>
+</edge>
+<edge source="c4475254" target="c4404499">
+  <data key="d7">-0.2554937428103561</data>
+</edge>
+<edge source="c1114110" target="c635683">
+  <data key="d7">0.21231972418176795</data>
+</edge>
+<edge source="c1114110" target="c4375879">
+  <data key="d7">0.4297652661067668</data>
+</edge>
+<edge source="c1114110" target="c4389957">
+  <data key="d7">0.283940771566319</data>
+</edge>
+<edge source="c60159" target="c605566">
+  <data key="d7">-0.21017263102328163</data>
+</edge>
+<edge source="c60159" target="c4389957">
+  <data key="d7">-0.3731051981449127</data>
+</edge>
+<edge source="c4402734" target="c92920">
+  <data key="d7">0.33398187160491943</data>
+</edge>
+<edge source="c4402734" target="c816411">
+  <data key="d7">0.2139907032251358</data>
+</edge>
+<edge source="c1120649" target="c4424700">
+  <data key="d7">0.368406542467064</data>
+</edge>
+<edge source="c1120649" target="c4389958">
+  <data key="d7">0.20138236064668066</data>
+</edge>
+<edge source="c4479618" target="c1121453">
+  <data key="d7">-0.29523733258247375</data>
+</edge>
+<edge source="c60179" target="c104678">
+  <data key="d7">0.2219746857881546</data>
+</edge>
+<edge source="c60179" target="c4448331">
+  <data key="d7">-0.2854596972465515</data>
+</edge>
+<edge source="c60179" target="c92920">
+  <data key="d7">-0.28934571146965027</data>
+</edge>
+<edge source="c4294683" target="c636022">
+  <data key="d7">-0.23697052896022797</data>
+</edge>
+<edge source="c4294683" target="c92920">
+  <data key="d7">-0.5766599774360657</data>
+</edge>
+<edge source="c104678" target="c4424700">
+  <data key="d7">0.19741617815501888</data>
+</edge>
+<edge source="c104678" target="c587391">
+  <data key="d7">0.3857801556587219</data>
+</edge>
+<edge source="c104678" target="c2305122">
+  <data key="d7">0.3410780131816864</data>
+</edge>
+<edge source="c635683" target="c566357">
+  <data key="d7">0.2009357058202646</data>
+</edge>
+<edge source="c635683" target="c3760122">
+  <data key="d7">0.21858683078153282</data>
+</edge>
+<edge source="c635683" target="c636022">
+  <data key="d7">0.21396085619926453</data>
+</edge>
+<edge source="c635683" target="c92209">
+  <data key="d7">-0.20450865165771856</data>
+</edge>
+<edge source="c1856738" target="c4389957">
+  <data key="d7">-0.21508018672466278</data>
+</edge>
+<edge source="c1856738" target="c4481801">
+  <data key="d7">-0.20948138889593748</data>
+</edge>
+<edge source="c2383902" target="c4424700">
+  <data key="d7">-0.4827077388763428</data>
+</edge>
+<edge source="c4313405" target="c636022">
+  <data key="d7">-0.3694053590297699</data>
+</edge>
+<edge source="c4375879" target="c566357">
+  <data key="d7">0.27133103931649666</data>
+</edge>
+<edge source="c4375879" target="c2305122">
+  <data key="d7">0.22785899886289251</data>
+</edge>
+<edge source="c4375879" target="c144099">
+  <data key="d7">-0.2331846441145587</data>
+</edge>
+<edge source="c4375879" target="c824245">
+  <data key="d7">-0.27433044994805333</data>
+</edge>
+<edge source="c4338074" target="c605566">
+  <data key="d7">-0.21402803065939038</data>
+</edge>
+<edge source="c4338074" target="c2305122">
+  <data key="d7">-0.258034884929657</data>
+</edge>
+<edge source="c4425583" target="c661964">
+  <data key="d7">0.2694460153579712</data>
+</edge>
+<edge source="c4425583" target="c92920">
+  <data key="d7">0.5969270006121093</data>
+</edge>
+<edge source="c4425583" target="c646557">
+  <data key="d7">0.37232887744903564</data>
+</edge>
+<edge source="c1118935" target="c605566">
+  <data key="d7">-0.22645419570324776</data>
+</edge>
+<edge source="c1118935" target="c2146124">
+  <data key="d7">-0.30343908071517944</data>
+</edge>
+<edge source="c1054" target="c3760122">
+  <data key="d7">-0.21744434535503387</data>
+</edge>
+<edge source="c4424700" target="c587391">
+  <data key="d7">0.545539422619144</data>
+</edge>
+<edge source="c4424700" target="c4389957">
+  <data key="d7">0.28609940001693607</data>
+</edge>
+<edge source="c4424700" target="c636022">
+  <data key="d7">0.22214138885042595</data>
+</edge>
+<edge source="c4424700" target="c92209">
+  <data key="d7">-0.2308932102035323</data>
+</edge>
+<edge source="c4424700" target="c824245">
+  <data key="d7">-0.24571827679397545</data>
+</edge>
+<edge source="c1121453" target="c4389958">
+  <data key="d7">-0.24809680879116058</data>
+</edge>
+<edge source="c1121453" target="c3760122">
+  <data key="d7">-0.22321352362632751</data>
+</edge>
+<edge source="c1121453" target="c4481801">
+  <data key="d7">0.32643431425094604</data>
+</edge>
+<edge source="c1121453" target="c4404499">
+  <data key="d7">-0.20016230642795563</data>
+</edge>
+<edge source="c566357" target="c1107901">
+  <data key="d7">-0.32146552205085754</data>
+</edge>
+<edge source="c566357" target="c536121">
+  <data key="d7">0.3566566631198259</data>
+</edge>
+<edge source="c566357" target="c1114496">
+  <data key="d7">0.28351466274195025</data>
+</edge>
+<edge source="c661964" target="c4397109">
+  <data key="d7">0.3382587134838104</data>
+</edge>
+<edge source="c661964" target="c92920">
+  <data key="d7">0.6978517412678598</data>
+</edge>
+<edge source="c736040" target="c587391">
+  <data key="d7">0.3842808999296171</data>
+</edge>
+<edge source="c736040" target="c4389958">
+  <data key="d7">0.23927123546162812</data>
+</edge>
+<edge source="c736040" target="c2146124">
+  <data key="d7">0.21472330391407013</data>
+</edge>
+<edge source="c736040" target="c1114496">
+  <data key="d7">-0.24466611444950104</data>
+</edge>
+<edge source="c736040" target="c816411">
+  <data key="d7">-0.1945492070674174</data>
+</edge>
+<edge source="c1107901" target="c4376458">
+  <data key="d7">-0.26372289657592773</data>
+</edge>
+<edge source="c536121" target="c4361909">
+  <data key="d7">0.3475403502815816</data>
+</edge>
+<edge source="c536121" target="c4389958">
+  <data key="d7">-0.21620938181877136</data>
+</edge>
+<edge source="c536121" target="c2146124">
+  <data key="d7">0.2533768492057424</data>
+</edge>
+<edge source="c536121" target="c4404499">
+  <data key="d7">-0.22172848880290985</data>
+</edge>
+<edge source="c4376458" target="c4389957">
+  <data key="d7">0.3308259844779968</data>
+</edge>
+<edge source="c587391" target="c4389958">
+  <data key="d7">0.20409975945949554</data>
+</edge>
+<edge source="c4361909" target="c4389958">
+  <data key="d7">-0.31955695152282715</data>
+</edge>
+<edge source="c4361909" target="c341734">
+  <data key="d7">-0.2241915464401245</data>
+</edge>
+<edge source="c2305122" target="c4481801">
+  <data key="d7">0.2954472283325858</data>
+</edge>
+<edge source="c2305122" target="c144099">
+  <data key="d7">-0.266831636428833</data>
+</edge>
+<edge source="c4448331" target="c755585">
+  <data key="d7">0.5631231069564819</data>
+</edge>
+<edge source="c4389957" target="c4397109">
+  <data key="d7">-0.2811654508113861</data>
+</edge>
+<edge source="c4389957" target="c2146124">
+  <data key="d7">0.2791552281077651</data>
+</edge>
+<edge source="c4389957" target="c92920">
+  <data key="d7">-0.390586617178664</data>
+</edge>
+<edge source="c4389957" target="c755585">
+  <data key="d7">-0.34173783659935</data>
+</edge>
+<edge source="c3760122" target="c1114496">
+  <data key="d7">0.21186673488595095</data>
+</edge>
+<edge source="c636022" target="c92920">
+  <data key="d7">-0.30972070035998617</data>
+</edge>
+<edge source="c144099" target="c341734">
+  <data key="d7">-0.2395707219839096</data>
+</edge>
+<edge source="c92209" target="c646557">
+  <data key="d7">0.289634108543396</data>
+</edge>
+<edge source="c816411" target="c824245">
+  <data key="d7">0.1953767116252483</data>
+</edge>
+</graph></graphml>
