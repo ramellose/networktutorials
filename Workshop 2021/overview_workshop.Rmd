@@ -16,12 +16,12 @@ We recommend first going through the FlashWeave tutorial, so you have a network 
 However, after that, feel free to choose an analysis method of your choice and keep working on this. 
 During the hands-on, Lisa will demonstrate how to use the anuran method to analyze FlashWeave results. 
 
-The following tutorials are available:
-* [FlashWeave]()
-* [Working with igraph in R]()
-* [Working with NetworkX in Python]()
-* [Running manta on FlashWeave networks]()
-* [Running anuran on FlashWeave networks]()
+The following tutorials are available:  
+* [FlashWeave]()  
+* [Working with igraph in R]()  
+* [Working with NetworkX in Python]()  
+* [Running manta on FlashWeave networks]()  
+* [Running anuran on FlashWeave networks]()  
 
 
 

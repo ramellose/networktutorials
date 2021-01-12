@@ -12,7 +12,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 In this tutorial, we will write a small script to run network inference with FlashWeave on a group of BIOM files. These files are derived from samples collected for the Sponge Microbiome Project (Moitinho-Silva et al., 2017). Each file contains a collection of samples collected from a single sponge order. 
 
+You can download the files from the Github repository:
+[link to zip BIOM files](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges.zip). Unzip the files in a location of your choice. 
 
+In the script below, change the data_path C://Users//Username//Documents//Workshop to the location where your files are stored. The script will read each of the files in the folder, so make sure only the BIOM files are in the folder. 
+
+```{r flashweave, message=FALSE, eval=FALSE}
+using FlashWeave
+
+data_path = string("C:/Users/Username/Documents/Workshop/sponges")
+
+files = readdir(data_path)
+for file in files:
+  file_path = string(data_path, '/', file)
+ 	network = learn_network(file_path, sensitive=true, heterogeneous=false, n_obs_min=10)
+ 	saveloc = string(data_path, '/', file[begin:end-5], ".gml")
+	save_network(saveloc, network)
+end
+
+```
+
+The script looks for all files in the sponges folder. Each file is provided to FlashWeave and the inferred network is then stored as a .gml file. Note that for FlashWeave performance, the sensitive and heterogeneous settings matter a lot; their importance is described in more detail in the FlashWeave publication. 
 
 ## References
 
