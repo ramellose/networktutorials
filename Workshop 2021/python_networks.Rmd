@@ -24,7 +24,7 @@ If you were unable to run FlashWeave, please find the networks here: [ZIP file w
 import networkx as nx
 import pandas as pd
 import biom
-network_loc = ('C:/Users/user/Documents/workshop/sponges_networks/')  # Change to the folder where you downloaded the files
+network_loc = 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
 network = nx.read_gml(network_loc + 'Axinellida.gml')
 ```
 
@@ -53,7 +53,7 @@ The command below constructs the dict of dicts from the BIOM file; can you print
 
 ```{r taxdict, eval=FALSE}
 # read BIOM file 
-biom_loc = ('C:/Users/user/Documents/workshop/sponges/')  # Change to the folder where you downloaded the files
+biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  # Change to the folder where you downloaded the files
 biom_file = biom.load_table(biom_loc + "Axinellida.biom")
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes

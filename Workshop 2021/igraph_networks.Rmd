@@ -20,6 +20,11 @@ setwd('C:/Users/user/Documents/workshop')
 network_loc <- 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
 network = read_graph(paste(network_loc, 'Axinellida.gml', sep=''), format='gml')
 ```
+```{r read_graph_code, eval=TRUE, echo=FALSE, warnings=FALSE, messages=FALSE}
+library(igraph)
+network_loc <- '../Workshop 2021/sponges_networks/'  # Change to the folder where you downloaded the files
+network = read_graph(paste(network_loc, 'Axinellida.gml', sep=''), format='gml')
+```
 
 ## Accessing the igraph object
 
@@ -59,27 +64,51 @@ for (col in colnames(tax)){
 }
 
 ```
+```{r taxdict_2, eval=TRUE, echo=FALSE}
+library(phyloseq)
+# read BIOM file 
+biom_loc <- ('../Workshop 2021/sponges/')  # Change to the folder where you downloaded the files
+biom_file <- import_biom(paste(biom_loc, "Axinellida.biom", sep=''))
+tax <- data.frame(tax_table(biom_file))
 
+for (col in colnames(tax)){
+  network <- set.vertex.attribute(network, value=tax[[col]], name=col)
+}
+
+```
 Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. We also store them in a named list so they can be used for other analyses. 
 
-```{r taxdict_loop, eval=FALSE}
-# Get a list of all files and remove the .gml extension
-network_names <- list.files("sponges_networks")
+```{r taxdict_loop}
+# Get a list of all files with glm extension
+network_names <- list.files("sponges_networks", pattern = "\\.gml$")
 network_list <- list()
 for (name in network_names){
+  clean_name <- substr(name, 1, nchar(name)-4)
   network = read_graph(paste(network_loc, name, sep=''), format='gml')
   # read BIOM file
-  biom_file <- import_biom(paste(biom_loc, substr(name, 1, nchar(name)-4), '.biom', sep=''))
+  biom_file <- import_biom(paste(biom_loc, clean_name, '.biom', sep=''))
   tax <- data.frame(tax_table(biom_file))
   for (col in colnames(tax)){
     network <- set.vertex.attribute(network, value=tax[[col]], name=col)
-    network_list[[substr(name, 1, nchar(name)-4)]] <- network
-    write_graph(network, format="graphml")
+    network_list[[clean_name]] <- network
+    name <- paste(clean_name, '.graphml', sep='')
+    #write_graph(network, file format="graphml")
   }
 }
 
 ```
 
+If we need to calculate network properties for networks, we can do so via igraph. For example, the following code calculates the degree, betweenness centrality, degree assortativity and generates a shortest path in the Axinellida network. We need to remove edge weights for 2 of these calculations. 
+
+```{r calcs}
+network <- network_list[['Axinellida']]
+hist(degree(network))
+print(paste("Degree assortativity:", assortativity.degree(network)))
+weightless <- delete_edge_attr(network, "weight")
+hist(betweenness(weightless))
+shortest_paths(weightless, 1, 2)$vpath
+
+```
 
 For an overview of the functions in igraph, check out the [reference manual](https://igraph.org/r/doc/). 
 
