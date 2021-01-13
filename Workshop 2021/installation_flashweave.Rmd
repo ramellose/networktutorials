@@ -1,7 +1,6 @@
 ---
 title: "Installing FlashWeave"
 author: "Lisa Rottjers"
-date: "12 januari 2021"
 output: html_document
 ---
 

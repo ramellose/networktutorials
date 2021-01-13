@@ -1,0 +1,54 @@
+---
+title: "Network analysis - _manta_ and _anuran_ "
+author: "Lisa Rottjers"
+output: html_document
+fig_width: 8
+fig_height: 4
+---
+
+# Network analysis - clusters
+  
+In this tutorial, we will look at the Axinellida network with manta. 
+You can install manta following the instructions on the Github: [manta Github repository](https://github.com/ramellose/manta). 
+
+## Step 1 - Data
+
+For this tutorial, we will use the networks from the FlashWeave tutorial: [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html).   
+If you were unable to run FlashWeave, please find the networks here: [ZIP file with networks](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges_networks.zip). 
+
+The Axinellida network is shown below. Negatively-weighted edges are coloured blue, the positively-weighted edges are in red. 
+
+```{r network, fig.margin=TRUE, out.width='30%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%202021/axinellida.PNG")
+```
+
+## Step 2 - Checking your installation 
+
+Open your terminal and check if your _manta_ installation works by running the help command. If you have correctly installed _manta_, you should get an explanation of all the parameters. 
+
+```{r help1, message=FALSE, eval=FALSE}
+manta -h
+```
+  
+## Step 3 - Running _manta_ on the SPIEC-EASI and FlashWeave networks
+
+There are two ways to import networks with _manta_: either you specify the complete file path, or you navigate to the directory where you saved the graphml files. Try navigating to the directory, since it will save you a lot of typing! Unfamiliar with command line? Check the [solutions](https://ramellose.github.io/networktutorials/workshop_manta_answers.html#cmd). 
+
+Now that you are in the right location, run _manta_. Only the -i and -o parameters are mandatory; other parameters implement different features or set parameters of the clustering algorithm itself. With the --layout flag, the software will generate a layout as well, so the graph will be organized by cluster if it is imported into Cytoscape. 
+
+```{r manta, message=FALSE, eval=FALSE}
+manta -i Axinellida.graphml -o Axinellida_clustered --layout 
+```
+
+Several flags affect how manta clusters the algorithm. These include -cr and -b. 
+Unfortunately, the -cr flag does not work very well because these networks are so small, but we can see what happens when we use the -b flag. 
+What do you think that the -b flag does? [Solution.](https://ramellose.github.io/networktutorials/workshop_manta_answers.html#manta) 
+
+```{r manta_b, message=FALSE, eval=FALSE}
+manta -i Axinellida.graphml -o Axinellida_clustered --layout -b
+```
+
+Can you try running manta on other sponge networks? Do any of them appear to have obvious clusters? 
+Several different clustering algorithsm are implemented in NetworkX and igraph. For example, we could try to run the walktrap clustering algorithm: [cluster_walktrap manual page](https://igraph.org/r/doc/cluster_walktrap.html). Try running this and other algorithms to see how these clusters are different!
+
+[Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)

@@ -1,7 +1,6 @@
 ---
 title: "Network analysis in Python"
 author: "Lisa Rottjers"
-date: "12 januari 2021"
 output: html_document
 ---
 
@@ -53,7 +52,8 @@ The command below constructs the dict of dicts from the BIOM file; can you print
 
 ```{r taxdict, eval=FALSE}
 # read BIOM file 
-biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  # Change to the folder where you downloaded the files
+# Change to the folder where you downloaded the files
+biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  
 biom_file = biom.load_table(biom_loc + "Axinellida.biom")
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes
@@ -75,7 +75,7 @@ for key in tax:
     nx.set_node_attributes(network, tax[key], key)
 ```
 
-Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. 
+Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. You can load these files into Cytoscape to visualize the networks and colour nodes by taxonomic information. 
 
 ```{r taxdict_loop, eval=FALSE}
 # Get a list of all files and remove the .gml extension

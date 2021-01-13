@@ -1,7 +1,6 @@
 ---
 title: "Network analysis in igraph"
 author: "Lisa Rottjers"
-date: "12 januari 2021"
 output: html_document
 ---
 
@@ -76,7 +75,8 @@ for (col in colnames(tax)){
 }
 
 ```
-Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. We also store them in a named list so they can be used for other analyses. 
+
+Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. For example, you can load these files into Cytoscape to visualize the networks. We also store them in a named list so they can be used for other analyses. 
 
 ```{r taxdict_loop}
 # Get a list of all files with glm extension

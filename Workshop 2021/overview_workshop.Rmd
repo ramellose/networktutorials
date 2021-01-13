@@ -1,7 +1,6 @@
 ---
-title: "Installation instructions"
+title: "Microbiome Data Analyses Workshop"
 author: "Lisa Rottjers"
-date: "12 januari 2021"
 output: html_document
 ---
 
@@ -18,12 +17,31 @@ During the hands-on, Lisa will demonstrate how to use the anuran method to analy
 
 The following tutorials are available:  
 * [Installing FlashWeave](https://ramellose.github.io/networktutorials/installation_flashweave.html)  
-* [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)
+* [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)  
 * [Working with igraph in R](https://ramellose.github.io/networktutorials/igraph_networks.html)  
 * [Working with NetworkX in Python](https://ramellose.github.io/networktutorials/python_networks.html)  
-* [Running manta on FlashWeave networks]()  
-* [Running anuran on FlashWeave networks]()  
+* [Running manta on FlashWeave networks](https://ramellose.github.io/networktutorials/workshop_manta.html)  
+* [Running anuran on FlashWeave networks](https://ramellose.github.io/networktutorials/workshop_anuran.html) 
 
+## Glossary
 
+Some of these terms may be used interchangably throughout the workshop, but they are not exactly the same. Please find included the definitions as I use them below. 
+
+* Network: a collection of nodes and edges.  
+* Graph: Synonymous to network. 
+* Node: A piece of information in a network which usually represents a microbial taxon for microbial networks. 
+* Edge: A link between two nodes. 
+* Weight: A property of an edge that describes the strength of the relationship. Weights can often be negative or positive. 
+* Association: A type of edge which does not represent an observed microbial interaction. 
+* Interaction: An ecological behaviour that involves two or more organisms, where they affect each other in some way. 
+* Directed: For a directed network, edges describe the direction of an effect. I.e. A affects B. 
+* Undirected: For an undirected network, edges do not describe the direction of an effect. We can only conclude that A is associated to B. 
+* Set: A collection of objects. Many sets are derived from specific collections, e.g. intersections or unions. 
+* Intersection: An intersection is a set that contains overlap between one or more groups. 
+* Union: A union is a complete collection, containing all objects belonging to all groups. 
+* Difference: A difference is a set that contains objects only found in one group. 
+* Partial intersection: A partial intersection is an intersection that contains overlap in a minimum number of groups. 
+
+[Overview of all tutorials](https://ramellose.github.io/networktutorials/index.html)
 
 

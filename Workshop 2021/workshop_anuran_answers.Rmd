@@ -1,0 +1,53 @@
+---
+title: "Network analysis - _anuran_ - answers"
+author: "Lisa Rottjers"
+output: html_document
+---
+
+# Solutions
+
+Try figuring out the solutions yourself before looking them up here. All documentation required to answer the questions are located in the hyperlinks in the tutorial. 
+
+## Running _anuran_ on the FlashWeave networks {#anuran}
+
+If you run _anuran_, the software will warn you that there are not enough networks to do a thorough statistical analysis. However, it does export a file with the intersection (overlap) between the networks and the null models. Since we used the -draw flag, _anuran_ will already plot some of the results. The most informative image is the one called 'demo_sponges_setsizes.png'. While the null models are random, your output should look somewhat similar to the one below. 
+
+```{r anuran_1, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%202021/demo_sponges_networks_setsizes.png")
+```
+
+As you can see, the difference in particular is smaller for the real data (labelled 'Input') compared to the null models. However, the intersection is close to zero. The reason that this is happening, is that there simply are no associations that are conserved across all networks! 
+We can adapt the -size parameter to tackle this. At 10 networks, a size of 0.2 will look at overlaps between 2 networks. 
+
+```{r anuran_sizes, message=FALSE, eval=FALSE}
+anuran -i folder -o demo -draw -size 0.2 0.3 0.5 0.7 1
+```
+
+## Showing changes in edges across networks {#conserved_edges}
+
+To plot changes across networks, we only need 
+
+```{r anuranplot, message=FALSE}
+library(ggplot2)
+
+data <- read.csv('demo_sets.csv')
+data <- data[!is.na(data$Set.type..absolute.), ]
+data$Network <- factor(data$Network, c('Input', 'Degree', 'Random'))
+ggplot(data, aes(x=Set.type..absolute., y=Set.size, colour=Network)) + geom_point() + theme_minimal() + labs(x='Edges present in at least this number of networks', y='Number')
+```
+
+## Positive controls {#positive_controls}
+
+To include positive controls, we need to add two parameters. One is the core prevalence (-prev), which describes across how many networks edges appear. The other is the core size, which describes how large the core is relative to the total network. You can include more than one value for both. 
+
+```{r anuran, message=FALSE, eval=FALSE}
+anuran -i folder -o demo -draw -size 0.2 0.3 0.5 0.7 1 -cs 0.2 0.5 -prev 0.2 0.5
+```
+
+We can use the same plotting function as above to generate the figure. The figure looks a bit confusing and could use some additional polishing, but as you can see, we can clearly make out the different groups of positive controls! The core size parameter matters for the number of edges, while the prevalence means there are still some conserved edges left even at 7 networks. 
+
+```{r anuranplot2, message=FALSE}
+data <- read.csv('demo_core_sets.csv')
+data <- data[!is.na(data$Set.type..absolute.), ]
+ggplot(data, aes(x=Set.type..absolute., y=Set.size, colour=Network)) + geom_point() + theme_minimal() + labs(x='Edges present in at least this number of networks', y='Number')
+```

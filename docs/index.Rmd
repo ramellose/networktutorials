@@ -6,6 +6,22 @@ output: html_document
 
 This repository contains all presentations and tutorial material for my workshops on network inference and analysis. If you have any questions on the topics, feel free to raise an issue on this repository or contact me. 
 
+## 2021
+
+[2021 tutorial overview](https://ramellose.github.io/networktutorials/overview_workshop.html) 
+
+[Installing FlashWeave](https://ramellose.github.io/networktutorials/installation_flashweave.html) 
+
+[Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)
+
+[Working with igraph in R](https://ramellose.github.io/networktutorials/igraph_networks.html) 
+
+[Working with NetworkX in Python](https://ramellose.github.io/networktutorials/python_networks.html)  
+
+[Running manta on FlashWeave networks](https://ramellose.github.io/networktutorials/workshop_manta.html)  
+
+[Running anuran on FlashWeave networks](https://ramellose.github.io/networktutorials/workshop_anuran.html) 
+
 ## 2020
 
 [Tutorial overview PPTX](https://github.com/ramellose/networktutorials/raw/master/Workshop%20network%20analysis%202020/Workshop%20overview.pptx)

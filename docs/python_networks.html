@@ -179,7 +179,6 @@ summary {
 
 <h1 class="title toc-ignore">Network analysis in Python</h1>
 <h4 class="author">Lisa Rottjers</h4>
-<h4 class="date">12 januari 2021</h4>
 
 </div>
 
@@ -213,7 +212,8 @@ print(network.edges[edgename]) </code></pre>
 We first iterate to create a dictionary of dictionaries; the top-level dictionary contains the taxonomy levels, while the lower-level dictionaries contain the node - taxonomy values.</p>
 <p>The command below constructs the dict of dicts from the BIOM file; can you print the complete taxonomy for taxon c4357330?</p>
 <pre class="r"><code># read BIOM file 
-biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  # Change to the folder where you downloaded the files
+# Change to the folder where you downloaded the files
+biom_loc = 'C:/Users/user/Documents/workshop/sponges/'  
 biom_file = biom.load_table(biom_loc + &quot;Axinellida.biom&quot;)
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes
@@ -228,7 +228,7 @@ print(tax['Rank4']['c4357330'])</code></pre>
 <p>NetworkX can add node metadata with a dictionary. We can iterate over the top-level dictionary to add all the taxonomic levels. Confirm that the taxonomy addition worked by checking the node metadata again.</p>
 <pre class="r"><code>for key in tax:
     nx.set_node_attributes(network, tax[key], key)</code></pre>
-<p>Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software.</p>
+<p>Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. You can load these files into Cytoscape to visualize the networks and colour nodes by taxonomic information.</p>
 <pre class="r"><code># Get a list of all files and remove the .gml extension
 network_names =[x[:-4] for x in os.listdir()]
 network_dict = dict.fromkeys(network_names)

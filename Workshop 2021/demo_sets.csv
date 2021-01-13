@@ -1,0 +1,607 @@
+,Network,Group,Network type,Conserved fraction,Prevalence of conserved fraction,Set type,Set size,Set type (absolute),Samples
+0,Input,sponges_networks,Input networks,,,Difference,577,,10.0
+1,Input,sponges_networks,Input networks,,,Intersection 0.2,214,2.0,10.0
+2,Input,sponges_networks,Input networks,,,Intersection 0.3,66,3.0,10.0
+3,Input,sponges_networks,Input networks,,,Intersection 0.5,6,5.0,10.0
+4,Input,sponges_networks,Input networks,,,Intersection 0.7,1,7.0,10.0
+5,Input,sponges_networks,Input networks,,,Intersection 1,1,10.0,10.0
+6,Degree,sponges_networks,Degree networks,,,Difference,809,,10.0
+7,Degree,sponges_networks,Degree networks,,,Intersection 0.2,137,2.0,10.0
+8,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+9,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+10,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+11,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+12,Random,sponges_networks,Random networks,,,Difference,863,,10.0
+13,Random,sponges_networks,Random networks,,,Intersection 0.2,115,2.0,10.0
+14,Random,sponges_networks,Random networks,,,Intersection 0.3,8,3.0,10.0
+15,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+16,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+17,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+18,Degree,sponges_networks,Degree networks,,,Difference,807,,10.0
+19,Degree,sponges_networks,Degree networks,,,Intersection 0.2,137,2.0,10.0
+20,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+21,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+22,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+23,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+24,Random,sponges_networks,Random networks,,,Difference,873,,10.0
+25,Random,sponges_networks,Random networks,,,Intersection 0.2,107,2.0,10.0
+26,Random,sponges_networks,Random networks,,,Intersection 0.3,14,3.0,10.0
+27,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+28,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+29,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+30,Degree,sponges_networks,Degree networks,,,Difference,822,,10.0
+31,Degree,sponges_networks,Degree networks,,,Intersection 0.2,130,2.0,10.0
+32,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+33,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+34,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+35,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+36,Random,sponges_networks,Random networks,,,Difference,832,,10.0
+37,Random,sponges_networks,Random networks,,,Intersection 0.2,128,2.0,10.0
+38,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+39,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+40,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+41,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+42,Degree,sponges_networks,Degree networks,,,Difference,799,,10.0
+43,Degree,sponges_networks,Degree networks,,,Intersection 0.2,142,2.0,10.0
+44,Degree,sponges_networks,Degree networks,,,Intersection 0.3,15,3.0,10.0
+45,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+46,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+47,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+48,Random,sponges_networks,Random networks,,,Difference,865,,10.0
+49,Random,sponges_networks,Random networks,,,Intersection 0.2,114,2.0,10.0
+50,Random,sponges_networks,Random networks,,,Intersection 0.3,8,3.0,10.0
+51,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+52,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+53,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+54,Degree,sponges_networks,Degree networks,,,Difference,795,,10.0
+55,Degree,sponges_networks,Degree networks,,,Intersection 0.2,142,2.0,10.0
+56,Degree,sponges_networks,Degree networks,,,Intersection 0.3,21,3.0,10.0
+57,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+58,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+59,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+60,Random,sponges_networks,Random networks,,,Difference,848,,10.0
+61,Random,sponges_networks,Random networks,,,Intersection 0.2,122,2.0,10.0
+62,Random,sponges_networks,Random networks,,,Intersection 0.3,9,3.0,10.0
+63,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+64,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+65,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+66,Degree,sponges_networks,Degree networks,,,Difference,813,,10.0
+67,Degree,sponges_networks,Degree networks,,,Intersection 0.2,133,2.0,10.0
+68,Degree,sponges_networks,Degree networks,,,Intersection 0.3,21,3.0,10.0
+69,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+70,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+71,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+72,Random,sponges_networks,Random networks,,,Difference,873,,10.0
+73,Random,sponges_networks,Random networks,,,Intersection 0.2,112,2.0,10.0
+74,Random,sponges_networks,Random networks,,,Intersection 0.3,4,3.0,10.0
+75,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+76,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+77,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+78,Degree,sponges_networks,Degree networks,,,Difference,844,,10.0
+79,Degree,sponges_networks,Degree networks,,,Intersection 0.2,121,2.0,10.0
+80,Degree,sponges_networks,Degree networks,,,Intersection 0.3,13,3.0,10.0
+81,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+82,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+83,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+84,Random,sponges_networks,Random networks,,,Difference,853,,10.0
+85,Random,sponges_networks,Random networks,,,Intersection 0.2,118,2.0,10.0
+86,Random,sponges_networks,Random networks,,,Intersection 0.3,10,3.0,10.0
+87,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+88,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+89,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+90,Degree,sponges_networks,Degree networks,,,Difference,855,,10.0
+91,Degree,sponges_networks,Degree networks,,,Intersection 0.2,119,2.0,10.0
+92,Degree,sponges_networks,Degree networks,,,Intersection 0.3,8,3.0,10.0
+93,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+94,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+95,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+96,Random,sponges_networks,Random networks,,,Difference,833,,10.0
+97,Random,sponges_networks,Random networks,,,Intersection 0.2,128,2.0,10.0
+98,Random,sponges_networks,Random networks,,,Intersection 0.3,9,3.0,10.0
+99,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+100,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+101,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+102,Degree,sponges_networks,Degree networks,,,Difference,833,,10.0
+103,Degree,sponges_networks,Degree networks,,,Intersection 0.2,125,2.0,10.0
+104,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+105,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+106,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+107,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+108,Random,sponges_networks,Random networks,,,Difference,845,,10.0
+109,Random,sponges_networks,Random networks,,,Intersection 0.2,120,2.0,10.0
+110,Random,sponges_networks,Random networks,,,Intersection 0.3,15,3.0,10.0
+111,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+112,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+113,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+114,Degree,sponges_networks,Degree networks,,,Difference,832,,10.0
+115,Degree,sponges_networks,Degree networks,,,Intersection 0.2,125,2.0,10.0
+116,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+117,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+118,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+119,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+120,Random,sponges_networks,Random networks,,,Difference,828,,10.0
+121,Random,sponges_networks,Random networks,,,Intersection 0.2,131,2.0,10.0
+122,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+123,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+124,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+125,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+126,Degree,sponges_networks,Degree networks,,,Difference,831,,10.0
+127,Degree,sponges_networks,Degree networks,,,Intersection 0.2,129,2.0,10.0
+128,Degree,sponges_networks,Degree networks,,,Intersection 0.3,11,3.0,10.0
+129,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+130,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+131,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+132,Random,sponges_networks,Random networks,,,Difference,869,,10.0
+133,Random,sponges_networks,Random networks,,,Intersection 0.2,111,2.0,10.0
+134,Random,sponges_networks,Random networks,,,Intersection 0.3,10,3.0,10.0
+135,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+136,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+137,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+138,Degree,sponges_networks,Degree networks,,,Difference,825,,10.0
+139,Degree,sponges_networks,Degree networks,,,Intersection 0.2,127,2.0,10.0
+140,Degree,sponges_networks,Degree networks,,,Intersection 0.3,20,3.0,10.0
+141,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+142,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+143,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+144,Random,sponges_networks,Random networks,,,Difference,857,,10.0
+145,Random,sponges_networks,Random networks,,,Intersection 0.2,116,2.0,10.0
+146,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+147,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+148,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+149,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+150,Degree,sponges_networks,Degree networks,,,Difference,780,,10.0
+151,Degree,sponges_networks,Degree networks,,,Intersection 0.2,146,2.0,10.0
+152,Degree,sponges_networks,Degree networks,,,Intersection 0.3,27,3.0,10.0
+153,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+154,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+155,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+156,Random,sponges_networks,Random networks,,,Difference,876,,10.0
+157,Random,sponges_networks,Random networks,,,Intersection 0.2,107,2.0,10.0
+158,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+159,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+160,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+161,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+162,Degree,sponges_networks,Degree networks,,,Difference,830,,10.0
+163,Degree,sponges_networks,Degree networks,,,Intersection 0.2,123,2.0,10.0
+164,Degree,sponges_networks,Degree networks,,,Intersection 0.3,20,3.0,10.0
+165,Degree,sponges_networks,Degree networks,,,Intersection 0.5,1,5.0,10.0
+166,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+167,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+168,Random,sponges_networks,Random networks,,,Difference,869,,10.0
+169,Random,sponges_networks,Random networks,,,Intersection 0.2,110,2.0,10.0
+170,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+171,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+172,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+173,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+174,Degree,sponges_networks,Degree networks,,,Difference,800,,10.0
+175,Degree,sponges_networks,Degree networks,,,Intersection 0.2,141,2.0,10.0
+176,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+177,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+178,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+179,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+180,Random,sponges_networks,Random networks,,,Difference,842,,10.0
+181,Random,sponges_networks,Random networks,,,Intersection 0.2,122,2.0,10.0
+182,Random,sponges_networks,Random networks,,,Intersection 0.3,15,3.0,10.0
+183,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+184,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+185,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+186,Degree,sponges_networks,Degree networks,,,Difference,832,,10.0
+187,Degree,sponges_networks,Degree networks,,,Intersection 0.2,128,2.0,10.0
+188,Degree,sponges_networks,Degree networks,,,Intersection 0.3,11,3.0,10.0
+189,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+190,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+191,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+192,Random,sponges_networks,Random networks,,,Difference,868,,10.0
+193,Random,sponges_networks,Random networks,,,Intersection 0.2,108,2.0,10.0
+194,Random,sponges_networks,Random networks,,,Intersection 0.3,15,3.0,10.0
+195,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+196,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+197,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+198,Degree,sponges_networks,Degree networks,,,Difference,836,,10.0
+199,Degree,sponges_networks,Degree networks,,,Intersection 0.2,122,2.0,10.0
+200,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+201,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+202,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+203,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+204,Random,sponges_networks,Random networks,,,Difference,843,,10.0
+205,Random,sponges_networks,Random networks,,,Intersection 0.2,122,2.0,10.0
+206,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+207,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+208,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+209,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+210,Degree,sponges_networks,Degree networks,,,Difference,841,,10.0
+211,Degree,sponges_networks,Degree networks,,,Intersection 0.2,120,2.0,10.0
+212,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+213,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+214,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+215,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+216,Random,sponges_networks,Random networks,,,Difference,878,,10.0
+217,Random,sponges_networks,Random networks,,,Intersection 0.2,108,2.0,10.0
+218,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+219,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+220,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+221,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+222,Degree,sponges_networks,Degree networks,,,Difference,806,,10.0
+223,Degree,sponges_networks,Degree networks,,,Intersection 0.2,138,2.0,10.0
+224,Degree,sponges_networks,Degree networks,,,Intersection 0.3,19,3.0,10.0
+225,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+226,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+227,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+228,Random,sponges_networks,Random networks,,,Difference,855,,10.0
+229,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+230,Random,sponges_networks,Random networks,,,Intersection 0.3,19,3.0,10.0
+231,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+232,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+233,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+234,Degree,sponges_networks,Degree networks,,,Difference,777,,10.0
+235,Degree,sponges_networks,Degree networks,,,Intersection 0.2,152,2.0,10.0
+236,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+237,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+238,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+239,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+240,Random,sponges_networks,Random networks,,,Difference,885,,10.0
+241,Random,sponges_networks,Random networks,,,Intersection 0.2,103,2.0,10.0
+242,Random,sponges_networks,Random networks,,,Intersection 0.3,9,3.0,10.0
+243,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+244,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+245,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+246,Degree,sponges_networks,Degree networks,,,Difference,820,,10.0
+247,Degree,sponges_networks,Degree networks,,,Intersection 0.2,130,2.0,10.0
+248,Degree,sponges_networks,Degree networks,,,Intersection 0.3,20,3.0,10.0
+249,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+250,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+251,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+252,Random,sponges_networks,Random networks,,,Difference,880,,10.0
+253,Random,sponges_networks,Random networks,,,Intersection 0.2,108,2.0,10.0
+254,Random,sponges_networks,Random networks,,,Intersection 0.3,5,3.0,10.0
+255,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+256,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+257,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+258,Degree,sponges_networks,Degree networks,,,Difference,804,,10.0
+259,Degree,sponges_networks,Degree networks,,,Intersection 0.2,139,2.0,10.0
+260,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+261,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+262,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+263,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+264,Random,sponges_networks,Random networks,,,Difference,866,,10.0
+265,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+266,Random,sponges_networks,Random networks,,,Intersection 0.3,8,3.0,10.0
+267,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+268,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+269,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+270,Degree,sponges_networks,Degree networks,,,Difference,804,,10.0
+271,Degree,sponges_networks,Degree networks,,,Intersection 0.2,141,2.0,10.0
+272,Degree,sponges_networks,Degree networks,,,Intersection 0.3,15,3.0,10.0
+273,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+274,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+275,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+276,Random,sponges_networks,Random networks,,,Difference,855,,10.0
+277,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+278,Random,sponges_networks,Random networks,,,Intersection 0.3,18,3.0,10.0
+279,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+280,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+281,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+282,Degree,sponges_networks,Degree networks,,,Difference,785,,10.0
+283,Degree,sponges_networks,Degree networks,,,Intersection 0.2,143,2.0,10.0
+284,Degree,sponges_networks,Degree networks,,,Intersection 0.3,26,3.0,10.0
+285,Degree,sponges_networks,Degree networks,,,Intersection 0.5,1,5.0,10.0
+286,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+287,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+288,Random,sponges_networks,Random networks,,,Difference,880,,10.0
+289,Random,sponges_networks,Random networks,,,Intersection 0.2,103,2.0,10.0
+290,Random,sponges_networks,Random networks,,,Intersection 0.3,15,3.0,10.0
+291,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+292,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+293,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+294,Degree,sponges_networks,Degree networks,,,Difference,785,,10.0
+295,Degree,sponges_networks,Degree networks,,,Intersection 0.2,146,2.0,10.0
+296,Degree,sponges_networks,Degree networks,,,Intersection 0.3,23,3.0,10.0
+297,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+298,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+299,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+300,Random,sponges_networks,Random networks,,,Difference,862,,10.0
+301,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+302,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+303,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+304,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+305,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+306,Degree,sponges_networks,Degree networks,,,Difference,792,,10.0
+307,Degree,sponges_networks,Degree networks,,,Intersection 0.2,144,2.0,10.0
+308,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+309,Degree,sponges_networks,Degree networks,,,Intersection 0.5,1,5.0,10.0
+310,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+311,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+312,Random,sponges_networks,Random networks,,,Difference,849,,10.0
+313,Random,sponges_networks,Random networks,,,Intersection 0.2,121,2.0,10.0
+314,Random,sponges_networks,Random networks,,,Intersection 0.3,10,3.0,10.0
+315,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+316,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+317,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+318,Degree,sponges_networks,Degree networks,,,Difference,805,,10.0
+319,Degree,sponges_networks,Degree networks,,,Intersection 0.2,140,2.0,10.0
+320,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+321,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+322,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+323,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+324,Random,sponges_networks,Random networks,,,Difference,882,,10.0
+325,Random,sponges_networks,Random networks,,,Intersection 0.2,102,2.0,10.0
+326,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+327,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+328,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+329,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+330,Degree,sponges_networks,Degree networks,,,Difference,829,,10.0
+331,Degree,sponges_networks,Degree networks,,,Intersection 0.2,128,2.0,10.0
+332,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+333,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+334,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+335,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+336,Random,sponges_networks,Random networks,,,Difference,869,,10.0
+337,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+338,Random,sponges_networks,Random networks,,,Intersection 0.3,6,3.0,10.0
+339,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+340,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+341,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+342,Degree,sponges_networks,Degree networks,,,Difference,815,,10.0
+343,Degree,sponges_networks,Degree networks,,,Intersection 0.2,134,2.0,10.0
+344,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+345,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+346,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+347,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+348,Random,sponges_networks,Random networks,,,Difference,876,,10.0
+349,Random,sponges_networks,Random networks,,,Intersection 0.2,107,2.0,10.0
+350,Random,sponges_networks,Random networks,,,Intersection 0.3,10,3.0,10.0
+351,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+352,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+353,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+354,Degree,sponges_networks,Degree networks,,,Difference,774,,10.0
+355,Degree,sponges_networks,Degree networks,,,Intersection 0.2,154,2.0,10.0
+356,Degree,sponges_networks,Degree networks,,,Intersection 0.3,19,3.0,10.0
+357,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+358,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+359,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+360,Random,sponges_networks,Random networks,,,Difference,855,,10.0
+361,Random,sponges_networks,Random networks,,,Intersection 0.2,117,2.0,10.0
+362,Random,sponges_networks,Random networks,,,Intersection 0.3,12,3.0,10.0
+363,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+364,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+365,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+366,Degree,sponges_networks,Degree networks,,,Difference,823,,10.0
+367,Degree,sponges_networks,Degree networks,,,Intersection 0.2,131,2.0,10.0
+368,Degree,sponges_networks,Degree networks,,,Intersection 0.3,14,3.0,10.0
+369,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+370,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+371,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+372,Random,sponges_networks,Random networks,,,Difference,862,,10.0
+373,Random,sponges_networks,Random networks,,,Intersection 0.2,110,2.0,10.0
+374,Random,sponges_networks,Random networks,,,Intersection 0.3,17,3.0,10.0
+375,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+376,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+377,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+378,Degree,sponges_networks,Degree networks,,,Difference,792,,10.0
+379,Degree,sponges_networks,Degree networks,,,Intersection 0.2,147,2.0,10.0
+380,Degree,sponges_networks,Degree networks,,,Intersection 0.3,15,3.0,10.0
+381,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+382,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+383,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+384,Random,sponges_networks,Random networks,,,Difference,870,,10.0
+385,Random,sponges_networks,Random networks,,,Intersection 0.2,110,2.0,10.0
+386,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+387,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+388,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+389,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+390,Degree,sponges_networks,Degree networks,,,Difference,816,,10.0
+391,Degree,sponges_networks,Degree networks,,,Intersection 0.2,137,2.0,10.0
+392,Degree,sponges_networks,Degree networks,,,Intersection 0.3,9,3.0,10.0
+393,Degree,sponges_networks,Degree networks,,,Intersection 0.5,1,5.0,10.0
+394,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+395,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+396,Random,sponges_networks,Random networks,,,Difference,841,,10.0
+397,Random,sponges_networks,Random networks,,,Intersection 0.2,124,2.0,10.0
+398,Random,sponges_networks,Random networks,,,Intersection 0.3,12,3.0,10.0
+399,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+400,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+401,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+402,Degree,sponges_networks,Degree networks,,,Difference,823,,10.0
+403,Degree,sponges_networks,Degree networks,,,Intersection 0.2,132,2.0,10.0
+404,Degree,sponges_networks,Degree networks,,,Intersection 0.3,14,3.0,10.0
+405,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+406,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+407,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+408,Random,sponges_networks,Random networks,,,Difference,867,,10.0
+409,Random,sponges_networks,Random networks,,,Intersection 0.2,111,2.0,10.0
+410,Random,sponges_networks,Random networks,,,Intersection 0.3,12,3.0,10.0
+411,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+412,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+413,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+414,Degree,sponges_networks,Degree networks,,,Difference,812,,10.0
+415,Degree,sponges_networks,Degree networks,,,Intersection 0.2,134,2.0,10.0
+416,Degree,sponges_networks,Degree networks,,,Intersection 0.3,20,3.0,10.0
+417,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+418,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+419,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+420,Random,sponges_networks,Random networks,,,Difference,851,,10.0
+421,Random,sponges_networks,Random networks,,,Intersection 0.2,118,2.0,10.0
+422,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+423,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+424,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+425,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+426,Degree,sponges_networks,Degree networks,,,Difference,831,,10.0
+427,Degree,sponges_networks,Degree networks,,,Intersection 0.2,127,2.0,10.0
+428,Degree,sponges_networks,Degree networks,,,Intersection 0.3,14,3.0,10.0
+429,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+430,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+431,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+432,Random,sponges_networks,Random networks,,,Difference,861,,10.0
+433,Random,sponges_networks,Random networks,,,Intersection 0.2,116,2.0,10.0
+434,Random,sponges_networks,Random networks,,,Intersection 0.3,8,3.0,10.0
+435,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+436,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+437,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+438,Degree,sponges_networks,Degree networks,,,Difference,822,,10.0
+439,Degree,sponges_networks,Degree networks,,,Intersection 0.2,134,2.0,10.0
+440,Degree,sponges_networks,Degree networks,,,Intersection 0.3,11,3.0,10.0
+441,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+442,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+443,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+444,Random,sponges_networks,Random networks,,,Difference,869,,10.0
+445,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+446,Random,sponges_networks,Random networks,,,Intersection 0.3,6,3.0,10.0
+447,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+448,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+449,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+450,Degree,sponges_networks,Degree networks,,,Difference,778,,10.0
+451,Degree,sponges_networks,Degree networks,,,Intersection 0.2,153,2.0,10.0
+452,Degree,sponges_networks,Degree networks,,,Intersection 0.3,15,3.0,10.0
+453,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+454,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+455,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+456,Random,sponges_networks,Random networks,,,Difference,873,,10.0
+457,Random,sponges_networks,Random networks,,,Intersection 0.2,111,2.0,10.0
+458,Random,sponges_networks,Random networks,,,Intersection 0.3,6,3.0,10.0
+459,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+460,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+461,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+462,Degree,sponges_networks,Degree networks,,,Difference,811,,10.0
+463,Degree,sponges_networks,Degree networks,,,Intersection 0.2,135,2.0,10.0
+464,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+465,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+466,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+467,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+468,Random,sponges_networks,Random networks,,,Difference,868,,10.0
+469,Random,sponges_networks,Random networks,,,Intersection 0.2,113,2.0,10.0
+470,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+471,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+472,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+473,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+474,Degree,sponges_networks,Degree networks,,,Difference,829,,10.0
+475,Degree,sponges_networks,Degree networks,,,Intersection 0.2,126,2.0,10.0
+476,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+477,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+478,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+479,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+480,Random,sponges_networks,Random networks,,,Difference,869,,10.0
+481,Random,sponges_networks,Random networks,,,Intersection 0.2,110,2.0,10.0
+482,Random,sponges_networks,Random networks,,,Intersection 0.3,12,3.0,10.0
+483,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+484,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+485,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+486,Degree,sponges_networks,Degree networks,,,Difference,798,,10.0
+487,Degree,sponges_networks,Degree networks,,,Intersection 0.2,141,2.0,10.0
+488,Degree,sponges_networks,Degree networks,,,Intersection 0.3,18,3.0,10.0
+489,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+490,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+491,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+492,Random,sponges_networks,Random networks,,,Difference,886,,10.0
+493,Random,sponges_networks,Random networks,,,Intersection 0.2,103,2.0,10.0
+494,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+495,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+496,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+497,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+498,Degree,sponges_networks,Degree networks,,,Difference,832,,10.0
+499,Degree,sponges_networks,Degree networks,,,Intersection 0.2,126,2.0,10.0
+500,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+501,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+502,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+503,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+504,Random,sponges_networks,Random networks,,,Difference,909,,10.0
+505,Random,sponges_networks,Random networks,,,Intersection 0.2,92,2.0,10.0
+506,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+507,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+508,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+509,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+510,Degree,sponges_networks,Degree networks,,,Difference,803,,10.0
+511,Degree,sponges_networks,Degree networks,,,Intersection 0.2,143,2.0,10.0
+512,Degree,sponges_networks,Degree networks,,,Intersection 0.3,12,3.0,10.0
+513,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+514,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+515,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+516,Random,sponges_networks,Random networks,,,Difference,878,,10.0
+517,Random,sponges_networks,Random networks,,,Intersection 0.2,108,2.0,10.0
+518,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+519,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+520,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+521,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+522,Degree,sponges_networks,Degree networks,,,Difference,829,,10.0
+523,Degree,sponges_networks,Degree networks,,,Intersection 0.2,127,2.0,10.0
+524,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+525,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+526,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+527,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+528,Random,sponges_networks,Random networks,,,Difference,846,,10.0
+529,Random,sponges_networks,Random networks,,,Intersection 0.2,121,2.0,10.0
+530,Random,sponges_networks,Random networks,,,Intersection 0.3,12,3.0,10.0
+531,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+532,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+533,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+534,Degree,sponges_networks,Degree networks,,,Difference,814,,10.0
+535,Degree,sponges_networks,Degree networks,,,Intersection 0.2,135,2.0,10.0
+536,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+537,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+538,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+539,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+540,Random,sponges_networks,Random networks,,,Difference,874,,10.0
+541,Random,sponges_networks,Random networks,,,Intersection 0.2,106,2.0,10.0
+542,Random,sponges_networks,Random networks,,,Intersection 0.3,13,3.0,10.0
+543,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+544,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+545,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+546,Degree,sponges_networks,Degree networks,,,Difference,837,,10.0
+547,Degree,sponges_networks,Degree networks,,,Intersection 0.2,127,2.0,10.0
+548,Degree,sponges_networks,Degree networks,,,Intersection 0.3,10,3.0,10.0
+549,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+550,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+551,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+552,Random,sponges_networks,Random networks,,,Difference,860,,10.0
+553,Random,sponges_networks,Random networks,,,Intersection 0.2,117,2.0,10.0
+554,Random,sponges_networks,Random networks,,,Intersection 0.3,7,3.0,10.0
+555,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+556,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+557,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+558,Degree,sponges_networks,Degree networks,,,Difference,831,,10.0
+559,Degree,sponges_networks,Degree networks,,,Intersection 0.2,126,2.0,10.0
+560,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+561,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+562,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+563,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+564,Random,sponges_networks,Random networks,,,Difference,832,,10.0
+565,Random,sponges_networks,Random networks,,,Intersection 0.2,126,2.0,10.0
+566,Random,sponges_networks,Random networks,,,Intersection 0.3,16,3.0,10.0
+567,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+568,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+569,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+570,Degree,sponges_networks,Degree networks,,,Difference,833,,10.0
+571,Degree,sponges_networks,Degree networks,,,Intersection 0.2,126,2.0,10.0
+572,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+573,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+574,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+575,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+576,Random,sponges_networks,Random networks,,,Difference,868,,10.0
+577,Random,sponges_networks,Random networks,,,Intersection 0.2,109,2.0,10.0
+578,Random,sponges_networks,Random networks,,,Intersection 0.3,15,3.0,10.0
+579,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+580,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+581,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+582,Degree,sponges_networks,Degree networks,,,Difference,798,,10.0
+583,Degree,sponges_networks,Degree networks,,,Intersection 0.2,142,2.0,10.0
+584,Degree,sponges_networks,Degree networks,,,Intersection 0.3,16,3.0,10.0
+585,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+586,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+587,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+588,Random,sponges_networks,Random networks,,,Difference,857,,10.0
+589,Random,sponges_networks,Random networks,,,Intersection 0.2,117,2.0,10.0
+590,Random,sponges_networks,Random networks,,,Intersection 0.3,10,3.0,10.0
+591,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+592,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+593,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0
+594,Degree,sponges_networks,Degree networks,,,Difference,824,,10.0
+595,Degree,sponges_networks,Degree networks,,,Intersection 0.2,129,2.0,10.0
+596,Degree,sponges_networks,Degree networks,,,Intersection 0.3,17,3.0,10.0
+597,Degree,sponges_networks,Degree networks,,,Intersection 0.5,0,5.0,10.0
+598,Degree,sponges_networks,Degree networks,,,Intersection 0.7,0,7.0,10.0
+599,Degree,sponges_networks,Degree networks,,,Intersection 1,0,10.0,10.0
+600,Random,sponges_networks,Random networks,,,Difference,852,,10.0
+601,Random,sponges_networks,Random networks,,,Intersection 0.2,119,2.0,10.0
+602,Random,sponges_networks,Random networks,,,Intersection 0.3,11,3.0,10.0
+603,Random,sponges_networks,Random networks,,,Intersection 0.5,0,5.0,10.0
+604,Random,sponges_networks,Random networks,,,Intersection 0.7,0,7.0,10.0
+605,Random,sponges_networks,Random networks,,,Intersection 1,0,10.0,10.0

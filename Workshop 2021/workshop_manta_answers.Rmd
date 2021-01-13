@@ -1,0 +1,32 @@
+---
+title: "Network analysis - _manta_ - answers"
+author: "Lisa Rottjers"
+output: html_document
+---
+
+# Solutions
+
+Try figuring out the solutions yourself before looking them up here. All documentation required to answer the questions are located in the hyperlinks in the tutorial. 
+
+## Navigating on command line {#cmd}
+
+```{r cmd, message=FALSE, eval=FALSE}
+# To navigate to a lower directory, use the cd command. 
+cd Documents/tutorial
+# List all the files in the directory that have a graphml extension.
+ls *.graphml
+# navigate to the upper directory
+cd ..
+```
+
+## Running _manta_ on the Axinellida network {#manta}
+
+With the default settings, _manta_ will use the weights specified in the network as edge weights and generate a scoring matrix with these. However, with some network inference methods, the estimated edge weights can be very small. As a result, the scoring matrix converges to zero. The algorithm will tell you that this is happening by comparing its performance to a randomly generated cluster. You can fix this by converting negative values to -1 and positive values to 1 with the -b flag.   
+
+If you run _manta_, import the network in Cytoscape and set the node shape to the clusters, the network should look similar to the one below below:
+
+```{r spiecfig, fig.margin=TRUE, out.width='50%', echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktutorials/master/Workshop%202021/axinellida_b.PNG")
+```
+
+Not all network clustering algorithms are able to include edge weights. This means that they will cluster networks based on edge density, i.e. groups of nodes with a lot of edges between them. If a network has a lot of negative edges, those nodes may actually be clustered together. Such clusters are not reflective of biological behaviour, because these taxa will not have similar trends in their abundances across samples.  

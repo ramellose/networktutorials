@@ -1,0 +1,67 @@
+---
+title: "Network analysis - _manta_ and _anuran_ "
+author: "Lisa Rottjers"
+output: html_document
+fig_width: 8
+fig_height: 4
+---
+
+# Network analysis - conserved patterns
+  
+In this tutorial, we will look at the Axinellida network with anuran.  
+You can install anuran following the instructions on the Github: [anuran Github repository](https://github.com/ramellose/anuran). 
+
+## Step 1 - Data
+
+For this tutorial, we will use the networks from the FlashWeave tutorial: [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html).   
+If you were unable to run FlashWeave, please find the networks here: [ZIP file with networks](https://github.com/ramellose/networktutorials/blob/master/Workshop%202021/sponges_networks.zip). 
+
+## Step 2 - Running _anuran_ on the sponge networks
+
+Although all networks look superficially similar, it would be nice to have some idea of just how similar they are. For example, are the most central nodes in these networks identical? We can check such network properties with _anuran_. 
+
+Like before, first check your installation. 
+
+```{r help2, message=FALSE, eval=FALSE}
+anuran -h
+```
+
+This software accepts (multiple) groups of networks. It will try to import all networks in a folder and run analyses on these. Therefore, make sure the sponge_networks folder only contains the graphml or gml networks and give _anuran_ the name of the folder. We can get some initial figures with the -draw flag. Do you think that the networks are very similar? How big is the overlap?  [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#anuran) 
+
+```{r anuran, message=FALSE, eval=FALSE}
+anuran -i folder -o demo -draw
+```
+
+What parameter should you add to change the intersections? Rerun anuran with partial intersections before moving to the next section. [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#anuran)
+
+With the default plotting, the y-axis is a bit inconvenient because the difference is so much larger than the intersection. We can import the csv file and plot the intersection with ggplot2. 
+
+```{r anuranplot, message=FALSE}
+library(ggplot2)
+
+data <- read.csv('demo_sets.csv')
+data <- data[data$Set.type == 'Intersection 0.3',]
+data$Network <- factor(data$Network, c('Input', 'Degree', 'Random'))
+ggplot(data, aes(x=Network, y=Set.size, colour=Network)) + geom_point() + theme_minimal()
+```
+
+Can you change the figure above so it shows how the number of shared edges changes from 2 to 10 networks? [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#conserved_edges)
+
+The intersection sizes that are generated, are a function of the matching edges across networks. Networks can be similar even if the edges are not. For example, nodes that occupy a central position in one network may also be central in the second network, even if they share no neighbours. We only need to add a single flag to study node centralities with _anuran_. We will also reduce the number of null models and iterations, so it runs a bit faster. 
+
+```{r centrality, message=FALSE, eval=FALSE}
+anuran -i folder -o demo -draw -c -size 0.2 0.3 0.5 0.7 1 -perm 5 -nperm 10 
+```
+
+With R, we can import the csv file that was just generated. 
+
+```{r centralities, message=FALSE}
+centralities <- read.csv('demo_centralities.csv', stringsAsFactors = FALSE, row.names=1)
+knitr::kable(head(centralities[,1:9], 3))
+```
+
+The table above shows the first three values of the csv file. In this case, it shows for three taxa the 95% confidence interval of the degree (Upper.limit and Lower.limit). The centralities per network are also included in the table (but not shown), and can be useful after some parsing. 
+
+In addition to the option to evaluate conserved edges or centralities across networks, anuran includes an option to add positive controls. Can you run anuran with positive controls and try visualizing these as well? [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#positive_controls)
+
+[Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)
