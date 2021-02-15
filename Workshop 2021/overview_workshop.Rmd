@@ -9,15 +9,27 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 This hands-on workshop is part of the Microbiome Data Analyses Workshop (Hasselt, 2021). 
-In this workshop, we will introduce a new method for network inference and we will walk you through the steps necessary to start analyzing your network with other software. 
+In this workshop, we will introduce FlashWeave, a new method for network inference and we will walk you through the steps necessary to start analyzing your network with other software, including manta and anuran. Please find included links to installation instructions and all tutorials. 
 
 We recommend first going through the FlashWeave tutorial, so you have a network to work with. 
-However, after that, feel free to choose an analysis method of your choice and keep working on this. 
-During the hands-on, Lisa will demonstrate how to use the anuran method to analyze FlashWeave results. 
+However, after that, feel free to choose an analysis method of your choice to start with; these can all be followed independently. 
 
-The following tutorials are available:  
-* [Installing FlashWeave](https://ramellose.github.io/networktutorials/installation_flashweave.html)  
-* [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)  
+## Installation instructions
+* [Install FlashWeave (and Julia)](https://ramellose.github.io/networktutorials/installation_flashweave.html)
+* [Install Python 3](https://www.python.org/downloads/)
+* [Install PyCharm or another Python editor of choice](https://www.jetbrains.com/pycharm/download/#section=windows)
+* [Install manta](https://github.com/ramellose/manta)
+* [Install anuran](https://github.com/ramellose/anuran)
+
+### Installing Python packages
+You can choose to install Python packages from PyCharm, but you can also do so from the command line. 
+Use the command below to download networkx, pandas and biom-format. When you install manta and anuran, all other dependencies should be installed automatically. 
+```{r packages, message=FALSE, eval=FALSE}
+python3 -m pip install networkx
+```
+
+## Tutorials
+* [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html) 
 * [Working with igraph in R](https://ramellose.github.io/networktutorials/igraph_networks.html)  
 * [Working with NetworkX in Python](https://ramellose.github.io/networktutorials/python_networks.html)  
 * [Running manta on FlashWeave networks](https://ramellose.github.io/networktutorials/workshop_manta.html)  
