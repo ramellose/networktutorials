@@ -191,7 +191,7 @@ summary {
 data_path = string(&quot;C:/Users/Username/Documents/Workshop/sponges&quot;)
 
 files = readdir(data_path)
-for file in files:
+for file in files
   file_path = string(data_path, '/', file)
     network = learn_network(file_path, sensitive=true, heterogeneous=false, n_obs_min=10)
     saveloc = string(data_path, '/', file[begin:end-5], &quot;.gml&quot;)
