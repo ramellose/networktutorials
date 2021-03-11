@@ -14,6 +14,13 @@ While R has powerful network libraries in the form of [igraph](https://igraph.or
 
 In this tutorial, we will focus on [NetworkX](https://networkx.github.io/). You will learn how to access the NetworkX network object and how to calculate some interesting network properties. As [NetworkX](https://networkx.github.io/) is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. Moreover, NetworkX contains [dozens of algorithms](https://networkx.github.io/documentation/stable/py-modindex.html) specifically targeted towards network analysis. 
 
+## Install biom
+
+To install the Python biom package, you can use pip. The biom package is called biom-format. 
+```{r biomformat, eval=FALSE}
+python3 -m pip install biom-format
+```
+
 ## Importing a network
 
 To play with NetworkX, we first need a network. For this tutorial, we will use the networks from the FlashWeave tutorial: [Running FlashWeave on sponge networks](https://ramellose.github.io/networktutorials/running_flashweave.html)).   

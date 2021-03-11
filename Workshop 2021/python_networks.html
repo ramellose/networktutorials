@@ -188,6 +188,11 @@ summary {
 <p>While R has powerful network libraries in the form of <a href="https://igraph.org/r/">igraph</a> and <a href="https://cran.r-project.org/web/packages/network/network.pdf">network</a>, Python also has its fair share of excellent libraries For example, <a href="https://graph-tool.skewed.de/">graph-tool</a> and <a href="https://snap.stanford.edu/snappy/">Snap.py</a> are highly optimized and therefore great for massive data sets, while <a href="https://igraph.org/python/">igraph</a> also has a Python equivalent.</p>
 <p>In this tutorial, we will focus on <a href="https://networkx.github.io/">NetworkX</a>. You will learn how to access the NetworkX network object and how to calculate some interesting network properties. As <a href="https://networkx.github.io/">NetworkX</a> is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. Moreover, NetworkX contains <a href="https://networkx.github.io/documentation/stable/py-modindex.html">dozens of algorithms</a> specifically targeted towards network analysis.</p>
 </div>
+<div id="install-biom" class="section level2">
+<h2>Install biom</h2>
+<p>To install the Python biom package, you can use pip. The biom package is called biom-format.</p>
+<pre class="r"><code>python3 -m pip install biom-format</code></pre>
+</div>
 <div id="importing-a-network" class="section level2">
 <h2>Importing a network</h2>
 <p>To play with NetworkX, we first need a network. For this tutorial, we will use the networks from the FlashWeave tutorial: <a href="https://ramellose.github.io/networktutorials/running_flashweave.html">Running FlashWeave on sponge networks</a>).<br />
