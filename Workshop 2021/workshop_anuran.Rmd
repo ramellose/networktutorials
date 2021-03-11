@@ -26,13 +26,13 @@ Like before, first check your installation.
 anuran -h
 ```
 
-This software accepts (multiple) groups of networks. It will try to import all networks in a folder and run analyses on these. Therefore, make sure the sponge_networks folder only contains the graphml or gml networks and give _anuran_ the name of the folder. We can get some initial figures with the -draw flag. Do you think that the networks are very similar? How big is the overlap?  [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#anuran) 
+This software accepts (multiple) groups of networks. It will try to import all networks in a folder and run analyses on these. Therefore, make sure the sponge_networks folder only contains the graphml or gml networks and give _anuran_ the name of the folder. We can get some initial figures with the -draw flag. Do you think that the networks are very similar? How big is the overlap?  [Solution.](https://ramellose.github.io/networktutorials/workshop_anuran_answers.html) 
 
 ```{r anuran, message=FALSE, eval=FALSE}
 anuran -i folder -o demo -draw
 ```
 
-What parameter should you add to change the intersections? Rerun anuran with partial intersections before moving to the next section. [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#anuran)
+What parameter should you add to change the intersections? Rerun anuran with partial intersections before moving to the next section. [Solution.](https://ramellose.github.io/networktutorials/workshop_anuran_answers.html)
 
 With the default plotting, the y-axis is a bit inconvenient because the difference is so much larger than the intersection. We can import the csv file and plot the intersection with ggplot2. 
 
@@ -45,7 +45,7 @@ data$Network <- factor(data$Network, c('Input', 'Degree', 'Random'))
 ggplot(data, aes(x=Network, y=Set.size, colour=Network)) + geom_point() + theme_minimal()
 ```
 
-Can you change the figure above so it shows how the number of shared edges changes from 2 to 10 networks? [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#conserved_edges)
+Can you change the figure above so it shows how the number of shared edges changes from 2 to 10 networks? [Solution.](https://ramellose.github.io/networktutorials/workshop_anuran_answers.html#conserved_edges)
 
 The intersection sizes that are generated, are a function of the matching edges across networks. Networks can be similar even if the edges are not. For example, nodes that occupy a central position in one network may also be central in the second network, even if they share no neighbours. We only need to add a single flag to study node centralities with _anuran_. We will also reduce the number of null models and iterations, so it runs a bit faster. 
 
@@ -62,6 +62,6 @@ knitr::kable(head(centralities[,1:9], 3))
 
 The table above shows the first three values of the csv file. In this case, it shows for three taxa the 95% confidence interval of the degree (Upper.limit and Lower.limit). The centralities per network are also included in the table (but not shown), and can be useful after some parsing. 
 
-In addition to the option to evaluate conserved edges or centralities across networks, anuran includes an option to add positive controls. Can you run anuran with positive controls and try visualizing these as well? [Solution.](https://ramellose.github.io/networktutorials/workshop_demo_answers.html#positive_controls)
+In addition to the option to evaluate conserved edges or centralities across networks, anuran includes an option to add positive controls. Can you run anuran with positive controls and try visualizing these as well? [Solution.](https://ramellose.github.io/networktutorials/workshop_anuran_answers.html#positive_controls)
 
 [Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)
