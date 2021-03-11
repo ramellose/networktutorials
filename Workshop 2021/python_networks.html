@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Lisa Rottjers" />
+<meta name="author" content="Sam Rottjers" />
 
 
 <title>Network analysis in Python</title>
@@ -178,7 +178,7 @@ summary {
 
 
 <h1 class="title toc-ignore">Network analysis in Python</h1>
-<h4 class="author">Lisa Rottjers</h4>
+<h4 class="author">Sam Rottjers</h4>
 
 </div>
 
@@ -195,6 +195,7 @@ If you were unable to run FlashWeave, please find the networks here: <a href="ht
 <pre class="r"><code>import networkx as nx
 import pandas as pd
 import biom
+import os
 network_loc = 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
 network = nx.read_gml(network_loc + 'Axinellida.gml')</code></pre>
 </div>
@@ -218,10 +219,10 @@ biom_file = biom.load_table(biom_loc + &quot;Axinellida.biom&quot;)
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes
 tax = dict()
-for col in taxonomy.columns:
+for col in tax_table.columns:
     tax[col] = dict()
-for row in taxonomy.iterrows():
-    for col in taxonomy.columns:
+for row in tax_table.iterrows():
+    for col in tax_table.columns:
         tax[col][str(row[0])] = row[1][col]
 
 print(tax['Rank4']['c4357330'])</code></pre>
@@ -230,7 +231,7 @@ print(tax['Rank4']['c4357330'])</code></pre>
     nx.set_node_attributes(network, tax[key], key)</code></pre>
 <p>Of course, we can repeat this for all sponge networks. First, we make a list of all names from the folders containing the networks. Then we find the matching BIOM files. Finally, we store these networks as graphml files instead, so they can be imported in other software. You can load these files into Cytoscape to visualize the networks and colour nodes by taxonomic information.</p>
 <pre class="r"><code># Get a list of all files and remove the .gml extension
-network_names =[x[:-4] for x in os.listdir()]
+network_names = [x[:-4] for x in os.listdir(network_loc) if x[-4:] == '.gml']
 network_dict = dict.fromkeys(network_names)
 for name in network_dict:
   network = nx.read_gml(network_loc + name + '.gml')
@@ -239,10 +240,10 @@ for name in network_dict:
   tax_table = biom_file.metadata_to_dataframe(axis='observation')
   # make dict of network attributes
   tax = dict()
-  for col in taxonomy.columns:
+  for col in tax_table.columns:
       tax[col] = dict()
-  for row in taxonomy.iterrows():
-      for col in taxonomy.columns:
+  for row in tax_table.iterrows():
+      for col in tax_table.columns:
           tax[col][str(row[0])] = row[1][col]
   for key in tax:
       nx.set_node_attributes(network, tax[key], key)

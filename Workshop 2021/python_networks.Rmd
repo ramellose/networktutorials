@@ -23,6 +23,7 @@ If you were unable to run FlashWeave, please find the networks here: [ZIP file w
 import networkx as nx
 import pandas as pd
 import biom
+import os
 network_loc = 'C:/Users/user/Documents/workshop/sponges_networks/'  # Change to the folder where you downloaded the files
 network = nx.read_gml(network_loc + 'Axinellida.gml')
 ```
@@ -58,10 +59,10 @@ biom_file = biom.load_table(biom_loc + "Axinellida.biom")
 tax_table = biom_file.metadata_to_dataframe(axis='observation')
 # make dict of network attributes
 tax = dict()
-for col in taxonomy.columns:
+for col in tax_table.columns:
     tax[col] = dict()
-for row in taxonomy.iterrows():
-    for col in taxonomy.columns:
+for row in tax_table.iterrows():
+    for col in tax_table.columns:
         tax[col][str(row[0])] = row[1][col]
 
 print(tax['Rank4']['c4357330'])
@@ -79,7 +80,7 @@ Of course, we can repeat this for all sponge networks. First, we make a list of 
 
 ```{r taxdict_loop, eval=FALSE}
 # Get a list of all files and remove the .gml extension
-network_names =[x[:-4] for x in os.listdir()]
+network_names = [x[:-4] for x in os.listdir(network_loc) if x[-4:] == '.gml']
 network_dict = dict.fromkeys(network_names)
 for name in network_dict:
   network = nx.read_gml(network_loc + name + '.gml')
@@ -88,10 +89,10 @@ for name in network_dict:
   tax_table = biom_file.metadata_to_dataframe(axis='observation')
   # make dict of network attributes
   tax = dict()
-  for col in taxonomy.columns:
+  for col in tax_table.columns:
       tax[col] = dict()
-  for row in taxonomy.iterrows():
-      for col in taxonomy.columns:
+  for row in tax_table.iterrows():
+      for col in tax_table.columns:
           tax[col][str(row[0])] = row[1][col]
   for key in tax:
       nx.set_node_attributes(network, tax[key], key)
