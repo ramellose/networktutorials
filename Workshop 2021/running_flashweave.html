@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Lisa Rottjers" />
+<meta name="author" content="Sam Rottjers" />
 
 
 <title>Running FlashWeave on sponge networks</title>
@@ -178,7 +178,7 @@ summary {
 
 
 <h1 class="title toc-ignore">Running FlashWeave on sponge networks</h1>
-<h4 class="author">Lisa Rottjers</h4>
+<h4 class="author">Sam Rottjers</h4>
 
 </div>
 
@@ -191,7 +191,7 @@ summary {
 data_path = string(&quot;C:/Users/Username/Documents/Workshop/sponges&quot;)
 
 files = readdir(data_path)
-for file in files:
+for file in files
   file_path = string(data_path, '/', file)
     network = learn_network(file_path, sensitive=true, heterogeneous=false, n_obs_min=10)
     saveloc = string(data_path, '/', file[begin:end-5], &quot;.gml&quot;)

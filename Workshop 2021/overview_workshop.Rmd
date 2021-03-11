@@ -1,6 +1,6 @@
 ---
 title: "Microbiome Data Analyses Workshop"
-author: "Lisa Rottjers"
+author: "Sam Rottjers"
 output: html_document
 ---
 

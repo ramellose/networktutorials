@@ -1,6 +1,6 @@
 ---
 title: "Network analysis - _manta_ and _anuran_ "
-author: "Lisa Rottjers"
+author: "Sam Rottjers"
 output: html_document
 fig_width: 8
 fig_height: 4

@@ -1,6 +1,6 @@
 ---
 title: "Installing FlashWeave"
-author: "Lisa Rottjers"
+author: "Sam Rottjers"
 output: html_document
 ---
 

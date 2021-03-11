@@ -1,6 +1,6 @@
 ---
 title: "Network analysis - _anuran_ - answers"
-author: "Lisa Rottjers"
+author: "Sam Rottjers"
 output: html_document
 ---
 
