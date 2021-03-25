@@ -30,10 +30,10 @@ knitr::include_graphics("https://raw.githubusercontent.com/ramellose/networktuto
 
 ## Installing FlashWeave
 
-To install FlashWeave, run the following commands in a Julia session. 
-To exit the package installation mode, use Backspace or Ctrl + C. 
+To install FlashWeave, run the following commands in a Julia session. To enter the package installation mode (Pkg REPL), use **]**; note that is not necessary for the latest Julia version. 
+To exit the Pkg REPL, use Backspace or Ctrl + C. 
 ```{r flashweave, message=FALSE, eval=FALSE}
-]
+] # only for older versions of Julia
 add FlashWeave
 
 ```
