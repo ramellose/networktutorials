@@ -30,7 +30,7 @@ Open your terminal and check if your _manta_ installation works by running the h
 manta -h
 ```
   
-## Step 3 - Running _manta_ on the SPIEC-EASI and FlashWeave networks
+## Step 3 - Running _manta_ on the FlashWeave networks
 
 There are two ways to import networks with _manta_: either you specify the complete file path, or you navigate to the directory where you saved the graphml files. Try navigating to the directory, since it will save you a lot of typing! Unfamiliar with command line? Check the [solutions](https://ramellose.github.io/networktutorials/workshop_manta_answers.html#cmd). 
 

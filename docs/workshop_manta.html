@@ -198,8 +198,8 @@ If you were unable to run FlashWeave, please find the networks here: <a href="ht
 <p>Open your terminal and check if your <em>manta</em> installation works by running the help command. If you have correctly installed <em>manta</em>, you should get an explanation of all the parameters.</p>
 <pre class="r"><code>manta -h</code></pre>
 </div>
-<div id="step-3---running-manta-on-the-spiec-easi-and-flashweave-networks" class="section level2">
-<h2>Step 3 - Running <em>manta</em> on the SPIEC-EASI and FlashWeave networks</h2>
+<div id="step-3---running-manta-on-the-flashweave-networks" class="section level2">
+<h2>Step 3 - Running <em>manta</em> on the FlashWeave networks</h2>
 <p>There are two ways to import networks with <em>manta</em>: either you specify the complete file path, or you navigate to the directory where you saved the graphml files. Try navigating to the directory, since it will save you a lot of typing! Unfamiliar with command line? Check the <a href="https://ramellose.github.io/networktutorials/workshop_manta_answers.html#cmd">solutions</a>.</p>
 <p>Now that you are in the right location, run <em>manta</em>. Only the -i and -o parameters are mandatory; other parameters implement different features or set parameters of the clustering algorithm itself. With the --layout flag, the software will generate a layout as well, so the graph will be organized by cluster if it is imported into Cytoscape.</p>
 <pre class="r"><code>manta -i Axinellida.graphml -o Axinellida_clustered --layout </code></pre>
