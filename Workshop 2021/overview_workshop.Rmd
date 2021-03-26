@@ -17,7 +17,7 @@ However, after that, feel free to choose an analysis method of your choice to st
 ## Installation instructions
 * [Install FlashWeave (and Julia)](https://ramellose.github.io/networktutorials/installation_flashweave.html)
 * [Install Python 3](https://www.python.org/downloads/)
-* [Install PyCharm or another Python editor of choice](https://www.jetbrains.com/pycharm/download/#section=windows)
+* [Install PyCharm Community Edition or another Python editor of choice](https://www.jetbrains.com/pycharm/download/#section=windows)
 * [Install manta](https://github.com/ramellose/manta)
 * [Install anuran](https://github.com/ramellose/anuran)
 
