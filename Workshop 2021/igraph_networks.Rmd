@@ -88,7 +88,7 @@ for (name in network_names){
     network <- set.vertex.attribute(network, value=tax[[col]], name=col)
     network_list[[clean_name]] <- network
     name <- paste(clean_name, '.graphml', sep='')
-    #write_graph(network, file format="graphml")
+    #write_graph(network, file=name, format="graphml") uncomment to write graphml file
   }
 }
 
