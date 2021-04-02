@@ -28,14 +28,10 @@ network = read_graph(paste(network_loc, 'Axinellida.gml', sep=''), format='gml')
 ## Accessing the igraph object
 
 What information is already in the network? We can see the node and edge metadata by accessing a single node or edge. 
-Fill in the nodename and edgename variables yourself. 
-Do not forget the round brackets; with NetworkX, we index the network object with a [tuple](https://www.w3schools.com/python/python_tuples.asp) of the two nodes that participate in the edge. 
 
 ```{r access, eval=FALSE}
 print(V(network))
 print(E(network))
-nodename = 
-edgename = 
 
 vertex_attributes <- get.vertex.attribute(network)
 edge_attributes <- get.edge.attribute(network)
