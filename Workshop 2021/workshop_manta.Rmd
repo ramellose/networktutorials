@@ -49,6 +49,6 @@ manta -i Axinellida.graphml -o Axinellida_clustered --layout -b
 ```
 
 Can you try running manta on other sponge networks? Do any of them appear to have obvious clusters? 
-Several different clustering algorithsm are implemented in NetworkX and igraph. For example, we could try to run the walktrap clustering algorithm: [cluster_walktrap manual page](https://igraph.org/r/doc/cluster_walktrap.html). Try running this and other algorithms to see how these clusters are different!
+Several different clustering algorithms are implemented in NetworkX and igraph. For example, we could try to run the walktrap clustering algorithm: [cluster_walktrap manual page](https://igraph.org/r/doc/cluster_walktrap.html). Try running this and other algorithms to see how these clusters are different!
 
 [Back to overview](https://ramellose.github.io/networktutorials/overview_workshop.html)

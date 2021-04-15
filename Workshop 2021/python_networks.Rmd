@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why Python and NetworkX? 
 
-While R has powerful network libraries in the form of [igraph](https://igraph.org/r/) and [network](https://cran.r-project.org/web/packages/network/network.pdf), Python also has its fair share of excellent libraries For example, [graph-tool](https://graph-tool.skewed.de/) and [Snap.py](https://snap.stanford.edu/snappy/) are highly optimized and therefore great for massive data sets, while [igraph](https://igraph.org/python/) also has a Python equivalent. 
+While R has powerful network libraries in the form of [igraph](https://igraph.org/r/) and [network](https://cran.r-project.org/web/packages/network/network.pdf), Python also has its fair share of excellent libraries. For example, [graph-tool](https://graph-tool.skewed.de/) and [Snap.py](https://snap.stanford.edu/snappy/) are highly optimized and therefore great for massive data sets, while [igraph](https://igraph.org/python/) also has a Python equivalent. 
 
 In this tutorial, we will focus on [NetworkX](https://networkx.github.io/). You will learn how to access the NetworkX network object and how to calculate some interesting network properties. As [NetworkX](https://networkx.github.io/) is relatively simple to use, it is great for researchers who spend more time developing their analysis than running it. Moreover, NetworkX contains [dozens of algorithms](https://networkx.github.io/documentation/stable/py-modindex.html) specifically targeted towards network analysis. 
 
