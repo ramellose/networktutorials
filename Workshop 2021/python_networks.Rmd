@@ -72,7 +72,7 @@ for row in tax_table.iterrows():
     for col in tax_table.columns:
         tax[col][str(row[0])] = row[1][col]
 
-print(tax['Rank4']['c4357330'])
+print(tax['taxonomy_4']['c4357330'])
 ```
 
 NetworkX can add node metadata with a dictionary. We can iterate over the top-level dictionary to add all the taxonomic levels. 
@@ -107,7 +107,7 @@ for name in network_dict:
   # write network to graphml
   nx.write_graphml(network, network_loc + name + ".graphml")
 
-print(tax['Rank4']['c4357330'])
+print(tax['taxonomy_4']['c4357330'])
 ```
 
 We can do some interesting analyses with NetworkX now that we have the complete network. For example, we can test whether the degree distribution follows a power law. For this, we first need the degree distribution. This is again given as a dictionary, but it does not matter which node has what degree. Since we cannot access the values from the DegreeView directly, we first convert it to a dictionary, extract the values and convert the values to a list. 

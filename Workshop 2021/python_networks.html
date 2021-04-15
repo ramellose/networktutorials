@@ -230,7 +230,7 @@ for row in tax_table.iterrows():
     for col in tax_table.columns:
         tax[col][str(row[0])] = row[1][col]
 
-print(tax['Rank4']['c4357330'])</code></pre>
+print(tax['taxonomy_4']['c4357330'])</code></pre>
 <p>NetworkX can add node metadata with a dictionary. We can iterate over the top-level dictionary to add all the taxonomic levels. Confirm that the taxonomy addition worked by checking the node metadata again.</p>
 <pre class="r"><code>for key in tax:
     nx.set_node_attributes(network, tax[key], key)</code></pre>
@@ -256,7 +256,7 @@ for name in network_dict:
   # write network to graphml
   nx.write_graphml(network, network_loc + name + &quot;.graphml&quot;)
 
-print(tax['Rank4']['c4357330'])</code></pre>
+print(tax['taxonomy_4']['c4357330'])</code></pre>
 <p>We can do some interesting analyses with NetworkX now that we have the complete network. For example, we can test whether the degree distribution follows a power law. For this, we first need the degree distribution. This is again given as a dictionary, but it does not matter which node has what degree. Since we cannot access the values from the DegreeView directly, we first convert it to a dictionary, extract the values and convert the values to a list.</p>
 <p>Now we have the list of degrees, we can use the <a href="https://pypi.org/project/powerlaw/">powerlaw</a> package to extract the parameters of the power law distribution fit to the data and then test whether a power law distribution or another distribution better fits the data. If the likelihood (first value) is positive, then the first distribution is more likely. If it is negative, the second distribution fits the data better. The p-value (second value) tests whether the sign of the likelihood is significant. Which distribution do you think has the best fit?</p>
 <pre class="r"><code>deg = dict(nx.degree(network))
